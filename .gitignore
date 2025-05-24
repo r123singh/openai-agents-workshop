@@ -1,0 +1,21 @@
+# Environment variables
+.env
+__pycache__
+*.pyc
+*.pyo
+*.pyd
+*.pyw
+*.pyz
+
+# Gradio cache
+.gradio
+
+# Virtual environment
+venv/
+
+
+helloworld.py
+HR-Agent/hr_agent_article.md
+
+
+
