@@ -2,4 +2,5 @@ openai-agents
 gradio
 fastapi
 uvicorn
+python-docx
 
