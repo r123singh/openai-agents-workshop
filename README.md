@@ -14,6 +14,16 @@ A multi-agent HR assistant that handles various HR-related queries and actions. 
 
 [View HR Assistant Example](HR-Agent/README.md)
 
+### Trip Planner
+A multi-agent trip planner that handles everything from initial preferences to final booking. Features include:
+- Specialized agents for different trip planning domains (destination research, itinerary creation, booking, summary)
+- Web search integration for real-time information
+- Gradio-based web UI
+
+[View Trip Planner Example](Trip-planner/README.md)
+
+### Claims Agent
+
 ## Contributing
 
 We welcome contributions! Here's how you can help:
