@@ -1,0 +1,59 @@
+1. List the top 30 cities with the highest number of UNESCO World Heritage Sites. Plot on a map with distinct markers. Hover shows city, site count, and brief description of most famous site.
+
+2. Plot the 30 most visited national parks worldwide. Use unique markers. Hover shows park name, country, annual visitors, and a fun fact about its natural wonders.
+
+3. Map the top 25 global tech startup hubs by VC funding (last 5 years). Use bubble markers scaled by funding. Hover: city, funding (USD), # startups, top startup name.
+
+4. Plot 30 cities with worst air quality (PM2.5). Color-code markers (red=worst). Hover: city, country, PM2.5 value, WHO health advisory.
+
+5. Map 25 busiest airports by passenger traffic. Use airplane markers sized by volume. Hover: airport, IATA, city, country, passengers (M), top 3 destinations.
+
+6. Plot the 30 largest solar power plants by capacity (MW). Use sun-shaped markers, colored by continent. Hover: plant name, country, capacity, year built, households powered.
+
+7. Map 25 cities with most Michelin-starred restaurants. Use star markers — number of stars = count of 3-star restaurants. Hover: city, total stars, # of 3-star, top restaurant name.
+
+8. Plot 30 most active volcanoes (last decade) by eruption frequency. Use fiery markers scaled by eruptions. Hover: volcano name, country, elevation, last eruption, eruption style note.
+
+9. Map 25 universities with largest international student populations. Use graduation cap markers sized by enrollment. Hover: university, city, country, # int’l students, top 3 source countries, notable alum.
+
+10. Plot 30 cities with highest EV charging station density per capita. Use plug-shaped markers colored by speed tier. Hover: city, country, stations/1000, total stations, % EV fleet.
+
+11. Map 25 deepest subway systems by max depth. Use tunnel markers. Hover: city, metro name, deepest station, depth (m), fun fact (e.g., “Cold War bunker”).
+
+12. Plot 30 countries with most endangered species (IUCN). Use choropleth + animal markers at capitals. Hover: country, # endangered, top 3 species, conservation effort.
+
+13. Map 20 cities with highest number of skyscrapers (>150m). Use building markers scaled by count. Hover: city, country, total skyscrapers, tallest building name & height.
+
+14. Plot 25 cities with highest average coffee shop density per sq km. Use coffee cup markers. Hover: city, country, shops/km², most famous local chain, avg price of latte.
+
+15. Map 30 locations of Nobel Prize winners’ birthplaces. Use medal markers colored by category (Physics, Literature, etc.). Hover: name, year, category, discovery/title, birth city.
+
+16. Plot 25 largest container ports by TEU volume. Use ship/cargo markers sized by throughput. Hover: port name, country, city, annual TEU, top 3 trade partners.
+
+17. Map 20 cities with highest public WiFi hotspot density. Use WiFi symbol markers. Hover: city, country, hotspots/km², avg free session time, govt initiative name.
+
+18. Plot 30 locations of major film studios (Hollywood, Bollywood, Nollywood, etc.). Use film reel markers. Hover: studio name, city, country, founded year, top 3 box office hits.
+
+19. Map 25 cities with highest bike lane density per capita. Use bicycle markers colored by safety rating. Hover: city, country, km lanes / 100k people, % commuters who bike, policy name.
+
+20. Plot 30 locations of SpaceX, Blue Origin, Rocket Lab, and other major launch sites. Use rocket markers. Hover: site name, operator, first launch, next mission, payload capacity.
+
+21. Map 25 cities with highest density of co-working spaces. Use desk/laptop markers. Hover: city, country, spaces/km², avg membership cost, most popular chain.
+
+22. Plot 30 locations of major eSports tournament finals (past 5 years). Use game controller markers. Hover: event name, game title, prize pool, winner, attendance.
+
+23. Map 25 cities with highest public library density per capita. Use book markers. Hover: city, country, libraries / 100k people, most visited branch, annual visitors.
+
+24. Plot 30 locations of Tesla Gigafactories and major EV battery plants. Use battery markers colored by output (GWh). Hover: plant name, location, annual capacity, jobs created, opening year.
+
+25. Map 25 cities with highest rooftop garden / green roof coverage. Use leaf markers. Hover: city, country, total m² green roofs, policy name, environmental impact (tons CO2 reduced).
+
+26. Plot 30 locations of major music festivals (Coachella, Glastonbury, Tomorrowland, etc.). Use music note markers. Hover: festival name, dates, attendance, headliners, ticket price.
+
+27. Map 25 cities with highest number of public murals/street art zones. Use spray can markers. Hover: city, country, estimated murals, famous artist, top district.
+
+28. Plot 30 locations of major AI research labs (OpenAI, DeepMind, FAIR, etc.). Use neural network markers. Hover: lab name, parent org, city, country, key project, founding year.
+
+29. Map 25 cities with highest pedestrian-only zone (car-free) area in km². Use walking person markers. Hover: city, country, car-free km², policy name, % reduction in emissions.
+
+30. Plot 30 locations of tallest observation decks in the world. Use eye/view markers. Hover: building name, city, country, deck height (m), ticket price, view radius (km).

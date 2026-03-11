@@ -1,0 +1,1621 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_3e1a3a337642c59c71e9706920553933 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-minimap/3.6.1/Control.MiniMap.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet-minimap/3.6.1/Control.MiniMap.css"/>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet.fullscreen@3.0.0/Control.FullScreen.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet.fullscreen@3.0.0/Control.FullScreen.css"/>
+</head>
+<body>
+    
+    
+<div style="position: fixed; 
+     bottom: 50px; left: 50px; width: 150px; height: 120px; 
+     background-color: white; border:2px solid grey; z-index:9999; 
+     font-size:14px; padding: 10px;">
+     <p style="margin: 0 0 5px; font-weight: bold;">Number of Sites</p>
+     <p style="margin: 2px 0;"><i class="fa fa-circle" style="color:purple"></i> 4 sites</p>
+     <p style="margin: 2px 0;"><i class="fa fa-circle" style="color:red"></i> 3 sites</p>
+     <p style="margin: 2px 0;"><i class="fa fa-circle" style="color:orange"></i> 2 sites</p>
+     <p style="margin: 2px 0;"><i class="fa fa-circle" style="color:green"></i> 1 site</p>
+</div>
+    
+             <h3 align="center" style="font-size:20px"><b>Top 30 Cities with UNESCO World Heritage Sites</b></h3>
+             
+    
+            <div class="folium-map" id="map_3e1a3a337642c59c71e9706920553933" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_3e1a3a337642c59c71e9706920553933 = L.map(
+                "map_3e1a3a337642c59c71e9706920553933",
+                {
+                    center: [30.0, 0.0],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 2,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_b703bf1ef5273a7d2b69d2b42d8fc3fa = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 19,
+  "maxNativeZoom": 19,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_b703bf1ef5273a7d2b69d2b42d8fc3fa.addTo(map_3e1a3a337642c59c71e9706920553933);
+        
+    
+            var feature_group_bbf00fc6c7b564563639a229df703913 = L.featureGroup(
+                {
+}
+            );
+        
+    
+            var marker_a615d8e9d131d0205e3bce1a35654acd = L.marker(
+                [41.9028, 12.4964],
+                {
+}
+            ).addTo(feature_group_bbf00fc6c7b564563639a229df703913);
+        
+    
+            var icon_b505493aa3a3183b3eaec2d098413377 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "purple",
+  "iconColor": "white",
+  "icon": "university",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_973284382a6a8fc2794c844274222116 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_0a907a18ca910816ed4aecd9b6deb293 = $(`<div id="html_0a907a18ca910816ed4aecd9b6deb293" style="width: 100.0%; height: 100.0%;">     <div style="width: 250px;">         <h3 style="margin-bottom: 5px; color: #2c3e50;">Rome</h3>         <p style="margin: 2px 0;"><strong>Country:</strong> Italy</p>         <p style="margin: 2px 0;"><strong>UNESCO Sites:</strong> 4</p>         <hr style="margin: 8px 0;">         <p style="margin: 2px 0; font-style: italic;"><strong>Famous Site:</strong><br>Historic Centre of Rome, home to Colosseum and Roman Forum</p>     </div>     </div>`)[0];
+                popup_973284382a6a8fc2794c844274222116.setContent(html_0a907a18ca910816ed4aecd9b6deb293);
+            
+        
+
+        marker_a615d8e9d131d0205e3bce1a35654acd.bindPopup(popup_973284382a6a8fc2794c844274222116)
+        ;
+
+        
+    
+    
+            marker_a615d8e9d131d0205e3bce1a35654acd.bindTooltip(
+                `<div>
+                     Rome (4 sites)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_a615d8e9d131d0205e3bce1a35654acd.setIcon(icon_b505493aa3a3183b3eaec2d098413377);
+            
+    
+            var marker_c29cc262d43efdf75c5d6d298ca708e4 = L.marker(
+                [39.9042, 116.4074],
+                {
+}
+            ).addTo(feature_group_bbf00fc6c7b564563639a229df703913);
+        
+    
+            var icon_5c288ba7432593272826c54b0609abc2 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "purple",
+  "iconColor": "white",
+  "icon": "university",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_2a1d94aa91f6379bf6e2c7aadd7b02f9 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_9443f3347d41407727a69c2aa39be852 = $(`<div id="html_9443f3347d41407727a69c2aa39be852" style="width: 100.0%; height: 100.0%;">     <div style="width: 250px;">         <h3 style="margin-bottom: 5px; color: #2c3e50;">Beijing</h3>         <p style="margin: 2px 0;"><strong>Country:</strong> China</p>         <p style="margin: 2px 0;"><strong>UNESCO Sites:</strong> 4</p>         <hr style="margin: 8px 0;">         <p style="margin: 2px 0; font-style: italic;"><strong>Famous Site:</strong><br>Forbidden City, imperial palace of Ming and Qing dynasties</p>     </div>     </div>`)[0];
+                popup_2a1d94aa91f6379bf6e2c7aadd7b02f9.setContent(html_9443f3347d41407727a69c2aa39be852);
+            
+        
+
+        marker_c29cc262d43efdf75c5d6d298ca708e4.bindPopup(popup_2a1d94aa91f6379bf6e2c7aadd7b02f9)
+        ;
+
+        
+    
+    
+            marker_c29cc262d43efdf75c5d6d298ca708e4.bindTooltip(
+                `<div>
+                     Beijing (4 sites)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_c29cc262d43efdf75c5d6d298ca708e4.setIcon(icon_5c288ba7432593272826c54b0609abc2);
+            
+    
+            var marker_1bf504aae762b2e65e7ec8ffb2315c2f = L.marker(
+                [48.8566, 2.3522],
+                {
+}
+            ).addTo(feature_group_bbf00fc6c7b564563639a229df703913);
+        
+    
+            var icon_8bdbe8f642680b6ef4cef61f44705435 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "purple",
+  "iconColor": "white",
+  "icon": "university",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_c8abee107b67591cb79a5b33282c3108 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_baa081d1f9d35de00259f24cece972c4 = $(`<div id="html_baa081d1f9d35de00259f24cece972c4" style="width: 100.0%; height: 100.0%;">     <div style="width: 250px;">         <h3 style="margin-bottom: 5px; color: #2c3e50;">Paris</h3>         <p style="margin: 2px 0;"><strong>Country:</strong> France</p>         <p style="margin: 2px 0;"><strong>UNESCO Sites:</strong> 4</p>         <hr style="margin: 8px 0;">         <p style="margin: 2px 0; font-style: italic;"><strong>Famous Site:</strong><br>Banks of the Seine with Eiffel Tower and Notre-Dame</p>     </div>     </div>`)[0];
+                popup_c8abee107b67591cb79a5b33282c3108.setContent(html_baa081d1f9d35de00259f24cece972c4);
+            
+        
+
+        marker_1bf504aae762b2e65e7ec8ffb2315c2f.bindPopup(popup_c8abee107b67591cb79a5b33282c3108)
+        ;
+
+        
+    
+    
+            marker_1bf504aae762b2e65e7ec8ffb2315c2f.bindTooltip(
+                `<div>
+                     Paris (4 sites)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_1bf504aae762b2e65e7ec8ffb2315c2f.setIcon(icon_8bdbe8f642680b6ef4cef61f44705435);
+            
+    
+            var marker_b497c3181c294ce90335e064c98c80e0 = L.marker(
+                [41.0082, 28.9784],
+                {
+}
+            ).addTo(feature_group_bbf00fc6c7b564563639a229df703913);
+        
+    
+            var icon_49abae0a7f441b742c1bcaf0e08b4f10 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "purple",
+  "iconColor": "white",
+  "icon": "university",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_e11fbfb86af7d725050c4eb633dd1b14 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_5ee3e00a3665515b77654aa0da77894a = $(`<div id="html_5ee3e00a3665515b77654aa0da77894a" style="width: 100.0%; height: 100.0%;">     <div style="width: 250px;">         <h3 style="margin-bottom: 5px; color: #2c3e50;">Istanbul</h3>         <p style="margin: 2px 0;"><strong>Country:</strong> Turkey</p>         <p style="margin: 2px 0;"><strong>UNESCO Sites:</strong> 4</p>         <hr style="margin: 8px 0;">         <p style="margin: 2px 0; font-style: italic;"><strong>Famous Site:</strong><br>Historic Areas featuring Hagia Sophia and Topkapi Palace</p>     </div>     </div>`)[0];
+                popup_e11fbfb86af7d725050c4eb633dd1b14.setContent(html_5ee3e00a3665515b77654aa0da77894a);
+            
+        
+
+        marker_b497c3181c294ce90335e064c98c80e0.bindPopup(popup_e11fbfb86af7d725050c4eb633dd1b14)
+        ;
+
+        
+    
+    
+            marker_b497c3181c294ce90335e064c98c80e0.bindTooltip(
+                `<div>
+                     Istanbul (4 sites)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_b497c3181c294ce90335e064c98c80e0.setIcon(icon_49abae0a7f441b742c1bcaf0e08b4f10);
+            
+    
+            var marker_859ab360fedd7ea694d50bc3cc79feeb = L.marker(
+                [35.0116, 135.7681],
+                {
+}
+            ).addTo(feature_group_bbf00fc6c7b564563639a229df703913);
+        
+    
+            var icon_570e6c93894c317298c9dd8eae2558f3 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "university",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_9ee9a96998b3cfd362b579336d4ad456 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_08a6afa3502aaabc2dd8fa9246926303 = $(`<div id="html_08a6afa3502aaabc2dd8fa9246926303" style="width: 100.0%; height: 100.0%;">     <div style="width: 250px;">         <h3 style="margin-bottom: 5px; color: #2c3e50;">Kyoto</h3>         <p style="margin: 2px 0;"><strong>Country:</strong> Japan</p>         <p style="margin: 2px 0;"><strong>UNESCO Sites:</strong> 3</p>         <hr style="margin: 8px 0;">         <p style="margin: 2px 0; font-style: italic;"><strong>Famous Site:</strong><br>Historic Monuments of Ancient Kyoto including Kinkaku-ji</p>     </div>     </div>`)[0];
+                popup_9ee9a96998b3cfd362b579336d4ad456.setContent(html_08a6afa3502aaabc2dd8fa9246926303);
+            
+        
+
+        marker_859ab360fedd7ea694d50bc3cc79feeb.bindPopup(popup_9ee9a96998b3cfd362b579336d4ad456)
+        ;
+
+        
+    
+    
+            marker_859ab360fedd7ea694d50bc3cc79feeb.bindTooltip(
+                `<div>
+                     Kyoto (3 sites)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_859ab360fedd7ea694d50bc3cc79feeb.setIcon(icon_570e6c93894c317298c9dd8eae2558f3);
+            
+    
+            var marker_1d7a3b5efcf1eb22c596e9e7368fd0a8 = L.marker(
+                [52.52, 13.405],
+                {
+}
+            ).addTo(feature_group_bbf00fc6c7b564563639a229df703913);
+        
+    
+            var icon_a0f30b5fc2067b00159ce7d269b9e25e = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "university",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_e1829ef0e58d9319b9249c2bcaad0de0 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_53fa1449b5afe9664e005533960d53e4 = $(`<div id="html_53fa1449b5afe9664e005533960d53e4" style="width: 100.0%; height: 100.0%;">     <div style="width: 250px;">         <h3 style="margin-bottom: 5px; color: #2c3e50;">Berlin</h3>         <p style="margin: 2px 0;"><strong>Country:</strong> Germany</p>         <p style="margin: 2px 0;"><strong>UNESCO Sites:</strong> 3</p>         <hr style="margin: 8px 0;">         <p style="margin: 2px 0; font-style: italic;"><strong>Famous Site:</strong><br>Museum Island complex of five world-renowned museums</p>     </div>     </div>`)[0];
+                popup_e1829ef0e58d9319b9249c2bcaad0de0.setContent(html_53fa1449b5afe9664e005533960d53e4);
+            
+        
+
+        marker_1d7a3b5efcf1eb22c596e9e7368fd0a8.bindPopup(popup_e1829ef0e58d9319b9249c2bcaad0de0)
+        ;
+
+        
+    
+    
+            marker_1d7a3b5efcf1eb22c596e9e7368fd0a8.bindTooltip(
+                `<div>
+                     Berlin (3 sites)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_1d7a3b5efcf1eb22c596e9e7368fd0a8.setIcon(icon_a0f30b5fc2067b00159ce7d269b9e25e);
+            
+    
+            var marker_9468066b1c92b08c825be3ed6d44832c = L.marker(
+                [50.0755, 14.4378],
+                {
+}
+            ).addTo(feature_group_bbf00fc6c7b564563639a229df703913);
+        
+    
+            var icon_0e009105983cc2a5ec7736bd4e645412 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "university",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_55d36e8e822f3ef831d0ee4f3b64d9b3 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_196b112d4e366b9a7d6d1fad14bed8a1 = $(`<div id="html_196b112d4e366b9a7d6d1fad14bed8a1" style="width: 100.0%; height: 100.0%;">     <div style="width: 250px;">         <h3 style="margin-bottom: 5px; color: #2c3e50;">Prague</h3>         <p style="margin: 2px 0;"><strong>Country:</strong> Czech Republic</p>         <p style="margin: 2px 0;"><strong>UNESCO Sites:</strong> 3</p>         <hr style="margin: 8px 0;">         <p style="margin: 2px 0; font-style: italic;"><strong>Famous Site:</strong><br>Historic Centre with Prague Castle and Charles Bridge</p>     </div>     </div>`)[0];
+                popup_55d36e8e822f3ef831d0ee4f3b64d9b3.setContent(html_196b112d4e366b9a7d6d1fad14bed8a1);
+            
+        
+
+        marker_9468066b1c92b08c825be3ed6d44832c.bindPopup(popup_55d36e8e822f3ef831d0ee4f3b64d9b3)
+        ;
+
+        
+    
+    
+            marker_9468066b1c92b08c825be3ed6d44832c.bindTooltip(
+                `<div>
+                     Prague (3 sites)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_9468066b1c92b08c825be3ed6d44832c.setIcon(icon_0e009105983cc2a5ec7736bd4e645412);
+            
+    
+            var marker_ca49b16c9df4e1ee9b8b97768b1049f7 = L.marker(
+                [59.9343, 30.3351],
+                {
+}
+            ).addTo(feature_group_bbf00fc6c7b564563639a229df703913);
+        
+    
+            var icon_14a0549593c5dc7a0f151d6d7e05f92a = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "university",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_381741531791e452cb4ae3a075f88da4 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_5bfbf3d4e4d4e9cdf9f39e6e99875030 = $(`<div id="html_5bfbf3d4e4d4e9cdf9f39e6e99875030" style="width: 100.0%; height: 100.0%;">     <div style="width: 250px;">         <h3 style="margin-bottom: 5px; color: #2c3e50;">St. Petersburg</h3>         <p style="margin: 2px 0;"><strong>Country:</strong> Russia</p>         <p style="margin: 2px 0;"><strong>UNESCO Sites:</strong> 3</p>         <hr style="margin: 8px 0;">         <p style="margin: 2px 0; font-style: italic;"><strong>Famous Site:</strong><br>Historic Centre with Winter Palace and Hermitage Museum</p>     </div>     </div>`)[0];
+                popup_381741531791e452cb4ae3a075f88da4.setContent(html_5bfbf3d4e4d4e9cdf9f39e6e99875030);
+            
+        
+
+        marker_ca49b16c9df4e1ee9b8b97768b1049f7.bindPopup(popup_381741531791e452cb4ae3a075f88da4)
+        ;
+
+        
+    
+    
+            marker_ca49b16c9df4e1ee9b8b97768b1049f7.bindTooltip(
+                `<div>
+                     St. Petersburg (3 sites)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_ca49b16c9df4e1ee9b8b97768b1049f7.setIcon(icon_14a0549593c5dc7a0f151d6d7e05f92a);
+            
+    
+            var marker_1f8519381193788b55be2e1931e51856 = L.marker(
+                [48.2082, 16.3738],
+                {
+}
+            ).addTo(feature_group_bbf00fc6c7b564563639a229df703913);
+        
+    
+            var icon_f143d36362683681fc643356fa668156 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "university",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_ed46e4f1759462b5f4ec4d04373d128a = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_b75447ba9fb7daf0b6b1a9f3b378607d = $(`<div id="html_b75447ba9fb7daf0b6b1a9f3b378607d" style="width: 100.0%; height: 100.0%;">     <div style="width: 250px;">         <h3 style="margin-bottom: 5px; color: #2c3e50;">Vienna</h3>         <p style="margin: 2px 0;"><strong>Country:</strong> Austria</p>         <p style="margin: 2px 0;"><strong>UNESCO Sites:</strong> 3</p>         <hr style="margin: 8px 0;">         <p style="margin: 2px 0; font-style: italic;"><strong>Famous Site:</strong><br>Historic Centre with Schönbrunn Palace and Hofburg</p>     </div>     </div>`)[0];
+                popup_ed46e4f1759462b5f4ec4d04373d128a.setContent(html_b75447ba9fb7daf0b6b1a9f3b378607d);
+            
+        
+
+        marker_1f8519381193788b55be2e1931e51856.bindPopup(popup_ed46e4f1759462b5f4ec4d04373d128a)
+        ;
+
+        
+    
+    
+            marker_1f8519381193788b55be2e1931e51856.bindTooltip(
+                `<div>
+                     Vienna (3 sites)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_1f8519381193788b55be2e1931e51856.setIcon(icon_f143d36362683681fc643356fa668156);
+            
+    
+            var marker_b7d6bd46e00965b07d8ed3e8c7e4c7f0 = L.marker(
+                [43.7696, 11.2558],
+                {
+}
+            ).addTo(feature_group_bbf00fc6c7b564563639a229df703913);
+        
+    
+            var icon_82194757f1fcdd47e9781f6391aeb83a = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "university",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_971f2645c06e68bd5856fb419367e495 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_db727641137f3acf0042df950b05c79e = $(`<div id="html_db727641137f3acf0042df950b05c79e" style="width: 100.0%; height: 100.0%;">     <div style="width: 250px;">         <h3 style="margin-bottom: 5px; color: #2c3e50;">Florence</h3>         <p style="margin: 2px 0;"><strong>Country:</strong> Italy</p>         <p style="margin: 2px 0;"><strong>UNESCO Sites:</strong> 2</p>         <hr style="margin: 8px 0;">         <p style="margin: 2px 0; font-style: italic;"><strong>Famous Site:</strong><br>Historic Centre with Duomo and Uffizi Gallery</p>     </div>     </div>`)[0];
+                popup_971f2645c06e68bd5856fb419367e495.setContent(html_db727641137f3acf0042df950b05c79e);
+            
+        
+
+        marker_b7d6bd46e00965b07d8ed3e8c7e4c7f0.bindPopup(popup_971f2645c06e68bd5856fb419367e495)
+        ;
+
+        
+    
+    
+            marker_b7d6bd46e00965b07d8ed3e8c7e4c7f0.bindTooltip(
+                `<div>
+                     Florence (2 sites)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_b7d6bd46e00965b07d8ed3e8c7e4c7f0.setIcon(icon_82194757f1fcdd47e9781f6391aeb83a);
+            
+    
+            var marker_0aa538f50233f5712073e303ac6e625a = L.marker(
+                [30.0444, 31.2357],
+                {
+}
+            ).addTo(feature_group_bbf00fc6c7b564563639a229df703913);
+        
+    
+            var icon_9a7331406819e04e1897aa8e573c96f1 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "university",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_3501bc1af6ca5f0a98378038e39dba3b = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_c3399981f6dc4eb4343e334882586dd3 = $(`<div id="html_c3399981f6dc4eb4343e334882586dd3" style="width: 100.0%; height: 100.0%;">     <div style="width: 250px;">         <h3 style="margin-bottom: 5px; color: #2c3e50;">Cairo</h3>         <p style="margin: 2px 0;"><strong>Country:</strong> Egypt</p>         <p style="margin: 2px 0;"><strong>UNESCO Sites:</strong> 2</p>         <hr style="margin: 8px 0;">         <p style="margin: 2px 0; font-style: italic;"><strong>Famous Site:</strong><br>Historic Cairo with mosques, madrasas and ancient bazaars</p>     </div>     </div>`)[0];
+                popup_3501bc1af6ca5f0a98378038e39dba3b.setContent(html_c3399981f6dc4eb4343e334882586dd3);
+            
+        
+
+        marker_0aa538f50233f5712073e303ac6e625a.bindPopup(popup_3501bc1af6ca5f0a98378038e39dba3b)
+        ;
+
+        
+    
+    
+            marker_0aa538f50233f5712073e303ac6e625a.bindTooltip(
+                `<div>
+                     Cairo (2 sites)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_0aa538f50233f5712073e303ac6e625a.setIcon(icon_9a7331406819e04e1897aa8e573c96f1);
+            
+    
+            var marker_bcf86fd0b3bae7b848f3b49c8b2970ba = L.marker(
+                [37.9838, 23.7275],
+                {
+}
+            ).addTo(feature_group_bbf00fc6c7b564563639a229df703913);
+        
+    
+            var icon_b9f7b1ec549a053017979d2e1c56cbf8 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "university",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_eb137c4e9b00ed6e97f4b20e128ee0dd = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_4d76126573f744acab7880300a0f7a3f = $(`<div id="html_4d76126573f744acab7880300a0f7a3f" style="width: 100.0%; height: 100.0%;">     <div style="width: 250px;">         <h3 style="margin-bottom: 5px; color: #2c3e50;">Athens</h3>         <p style="margin: 2px 0;"><strong>Country:</strong> Greece</p>         <p style="margin: 2px 0;"><strong>UNESCO Sites:</strong> 2</p>         <hr style="margin: 8px 0;">         <p style="margin: 2px 0; font-style: italic;"><strong>Famous Site:</strong><br>Acropolis of Athens with Parthenon and ancient temples</p>     </div>     </div>`)[0];
+                popup_eb137c4e9b00ed6e97f4b20e128ee0dd.setContent(html_4d76126573f744acab7880300a0f7a3f);
+            
+        
+
+        marker_bcf86fd0b3bae7b848f3b49c8b2970ba.bindPopup(popup_eb137c4e9b00ed6e97f4b20e128ee0dd)
+        ;
+
+        
+    
+    
+            marker_bcf86fd0b3bae7b848f3b49c8b2970ba.bindTooltip(
+                `<div>
+                     Athens (2 sites)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_bcf86fd0b3bae7b848f3b49c8b2970ba.setIcon(icon_b9f7b1ec549a053017979d2e1c56cbf8);
+            
+    
+            var marker_d06d5e1540d81c169455fe8c78023d7b = L.marker(
+                [19.4326, -99.1332],
+                {
+}
+            ).addTo(feature_group_bbf00fc6c7b564563639a229df703913);
+        
+    
+            var icon_d3d62f0217ff51c2bbc0a7cd7ee62a94 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "university",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_2037da809a869bde61d256fb7ed8e5fb = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_4c504b818955c3ef2827fd47cdede97a = $(`<div id="html_4c504b818955c3ef2827fd47cdede97a" style="width: 100.0%; height: 100.0%;">     <div style="width: 250px;">         <h3 style="margin-bottom: 5px; color: #2c3e50;">Mexico City</h3>         <p style="margin: 2px 0;"><strong>Country:</strong> Mexico</p>         <p style="margin: 2px 0;"><strong>UNESCO Sites:</strong> 2</p>         <hr style="margin: 8px 0;">         <p style="margin: 2px 0; font-style: italic;"><strong>Famous Site:</strong><br>Historic Centre built on Aztec capital of Tenochtitlan</p>     </div>     </div>`)[0];
+                popup_2037da809a869bde61d256fb7ed8e5fb.setContent(html_4c504b818955c3ef2827fd47cdede97a);
+            
+        
+
+        marker_d06d5e1540d81c169455fe8c78023d7b.bindPopup(popup_2037da809a869bde61d256fb7ed8e5fb)
+        ;
+
+        
+    
+    
+            marker_d06d5e1540d81c169455fe8c78023d7b.bindTooltip(
+                `<div>
+                     Mexico City (2 sites)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_d06d5e1540d81c169455fe8c78023d7b.setIcon(icon_d3d62f0217ff51c2bbc0a7cd7ee62a94);
+            
+    
+            var marker_1be60f0effc058dbcf7d0ed0668ca73e = L.marker(
+                [28.6139, 77.209],
+                {
+}
+            ).addTo(feature_group_bbf00fc6c7b564563639a229df703913);
+        
+    
+            var icon_3d2030f63f7e9d177fede4da00d0b522 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "university",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_e141db100ee1e3c95aea87946309e1c2 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_982a4874af1e4ae9e98749c0075ffaa4 = $(`<div id="html_982a4874af1e4ae9e98749c0075ffaa4" style="width: 100.0%; height: 100.0%;">     <div style="width: 250px;">         <h3 style="margin-bottom: 5px; color: #2c3e50;">Delhi</h3>         <p style="margin: 2px 0;"><strong>Country:</strong> India</p>         <p style="margin: 2px 0;"><strong>UNESCO Sites:</strong> 2</p>         <hr style="margin: 8px 0;">         <p style="margin: 2px 0; font-style: italic;"><strong>Famous Site:</strong><br>Qutb Minar complex and Humayun's Tomb</p>     </div>     </div>`)[0];
+                popup_e141db100ee1e3c95aea87946309e1c2.setContent(html_982a4874af1e4ae9e98749c0075ffaa4);
+            
+        
+
+        marker_1be60f0effc058dbcf7d0ed0668ca73e.bindPopup(popup_e141db100ee1e3c95aea87946309e1c2)
+        ;
+
+        
+    
+    
+            marker_1be60f0effc058dbcf7d0ed0668ca73e.bindTooltip(
+                `<div>
+                     Delhi (2 sites)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_1be60f0effc058dbcf7d0ed0668ca73e.setIcon(icon_3d2030f63f7e9d177fede4da00d0b522);
+            
+    
+            var marker_21ebb1e687ca1795b214bf7ac11b8531 = L.marker(
+                [-13.532, -71.9673],
+                {
+}
+            ).addTo(feature_group_bbf00fc6c7b564563639a229df703913);
+        
+    
+            var icon_080af0a69a15340196a172af4bfd8079 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "university",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_7e4bb296402e7e05394feedb2f475f61 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_efa6f5fa4edc46d1dc4813d5457b003f = $(`<div id="html_efa6f5fa4edc46d1dc4813d5457b003f" style="width: 100.0%; height: 100.0%;">     <div style="width: 250px;">         <h3 style="margin-bottom: 5px; color: #2c3e50;">Cusco</h3>         <p style="margin: 2px 0;"><strong>Country:</strong> Peru</p>         <p style="margin: 2px 0;"><strong>UNESCO Sites:</strong> 2</p>         <hr style="margin: 8px 0;">         <p style="margin: 2px 0; font-style: italic;"><strong>Famous Site:</strong><br>City of Cuzco, ancient capital of Inca Empire</p>     </div>     </div>`)[0];
+                popup_7e4bb296402e7e05394feedb2f475f61.setContent(html_efa6f5fa4edc46d1dc4813d5457b003f);
+            
+        
+
+        marker_21ebb1e687ca1795b214bf7ac11b8531.bindPopup(popup_7e4bb296402e7e05394feedb2f475f61)
+        ;
+
+        
+    
+    
+            marker_21ebb1e687ca1795b214bf7ac11b8531.bindTooltip(
+                `<div>
+                     Cusco (2 sites)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_21ebb1e687ca1795b214bf7ac11b8531.setIcon(icon_080af0a69a15340196a172af4bfd8079);
+            
+    
+            var marker_64437c102a90d73b456f16bdd7f505ab = L.marker(
+                [47.4979, 19.0402],
+                {
+}
+            ).addTo(feature_group_bbf00fc6c7b564563639a229df703913);
+        
+    
+            var icon_44af302c9a78198d2e3f8c1cf0da1553 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "university",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_25892c04f6daaa0630c318a2411725d9 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_8732c6e4474c48e6d334b48abe7f449f = $(`<div id="html_8732c6e4474c48e6d334b48abe7f449f" style="width: 100.0%; height: 100.0%;">     <div style="width: 250px;">         <h3 style="margin-bottom: 5px; color: #2c3e50;">Budapest</h3>         <p style="margin: 2px 0;"><strong>Country:</strong> Hungary</p>         <p style="margin: 2px 0;"><strong>UNESCO Sites:</strong> 2</p>         <hr style="margin: 8px 0;">         <p style="margin: 2px 0; font-style: italic;"><strong>Famous Site:</strong><br>Buda Castle Quarter and Banks of the Danube</p>     </div>     </div>`)[0];
+                popup_25892c04f6daaa0630c318a2411725d9.setContent(html_8732c6e4474c48e6d334b48abe7f449f);
+            
+        
+
+        marker_64437c102a90d73b456f16bdd7f505ab.bindPopup(popup_25892c04f6daaa0630c318a2411725d9)
+        ;
+
+        
+    
+    
+            marker_64437c102a90d73b456f16bdd7f505ab.bindTooltip(
+                `<div>
+                     Budapest (2 sites)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_64437c102a90d73b456f16bdd7f505ab.setIcon(icon_44af302c9a78198d2e3f8c1cf0da1553);
+            
+    
+            var marker_261b40c7b619b2e4b7e2974125c6e8c0 = L.marker(
+                [50.0647, 19.945],
+                {
+}
+            ).addTo(feature_group_bbf00fc6c7b564563639a229df703913);
+        
+    
+            var icon_b2296c58156ac9a4e7fbdf22a61d45f5 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "university",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_816187767fa81d89c84d46c51a9a6777 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_0a9b5019a729e417e0491f1abf7c4144 = $(`<div id="html_0a9b5019a729e417e0491f1abf7c4144" style="width: 100.0%; height: 100.0%;">     <div style="width: 250px;">         <h3 style="margin-bottom: 5px; color: #2c3e50;">Krakow</h3>         <p style="margin: 2px 0;"><strong>Country:</strong> Poland</p>         <p style="margin: 2px 0;"><strong>UNESCO Sites:</strong> 2</p>         <hr style="margin: 8px 0;">         <p style="margin: 2px 0; font-style: italic;"><strong>Famous Site:</strong><br>Medieval Old Town with Main Market Square</p>     </div>     </div>`)[0];
+                popup_816187767fa81d89c84d46c51a9a6777.setContent(html_0a9b5019a729e417e0491f1abf7c4144);
+            
+        
+
+        marker_261b40c7b619b2e4b7e2974125c6e8c0.bindPopup(popup_816187767fa81d89c84d46c51a9a6777)
+        ;
+
+        
+    
+    
+            marker_261b40c7b619b2e4b7e2974125c6e8c0.bindTooltip(
+                `<div>
+                     Krakow (2 sites)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_261b40c7b619b2e4b7e2974125c6e8c0.setIcon(icon_b2296c58156ac9a4e7fbdf22a61d45f5);
+            
+    
+            var marker_83018d601fd0202c7fb250f45b900457 = L.marker(
+                [31.7683, 35.2137],
+                {
+}
+            ).addTo(feature_group_bbf00fc6c7b564563639a229df703913);
+        
+    
+            var icon_c06467ad0ed98980cc7ae6b3faefda1e = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "university",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_972b343b9c0631cc5a0a49465da14dbf = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_956edcc0c78ce4e540b5d1914b501cca = $(`<div id="html_956edcc0c78ce4e540b5d1914b501cca" style="width: 100.0%; height: 100.0%;">     <div style="width: 250px;">         <h3 style="margin-bottom: 5px; color: #2c3e50;">Jerusalem</h3>         <p style="margin: 2px 0;"><strong>Country:</strong> Israel/Palestine</p>         <p style="margin: 2px 0;"><strong>UNESCO Sites:</strong> 2</p>         <hr style="margin: 8px 0;">         <p style="margin: 2px 0; font-style: italic;"><strong>Famous Site:</strong><br>Old City of Jerusalem with Western Wall and Dome of the Rock</p>     </div>     </div>`)[0];
+                popup_972b343b9c0631cc5a0a49465da14dbf.setContent(html_956edcc0c78ce4e540b5d1914b501cca);
+            
+        
+
+        marker_83018d601fd0202c7fb250f45b900457.bindPopup(popup_972b343b9c0631cc5a0a49465da14dbf)
+        ;
+
+        
+    
+    
+            marker_83018d601fd0202c7fb250f45b900457.bindTooltip(
+                `<div>
+                     Jerusalem (2 sites)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_83018d601fd0202c7fb250f45b900457.setIcon(icon_c06467ad0ed98980cc7ae6b3faefda1e);
+            
+    
+            var marker_24061ba9971ff85c65eaf2554dd7b237 = L.marker(
+                [40.8518, 14.2681],
+                {
+}
+            ).addTo(feature_group_bbf00fc6c7b564563639a229df703913);
+        
+    
+            var icon_52192b4e224274f9ac2509146257fb73 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "university",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_9e7eee243317c4fdd3cb1e1abc4a5527 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_9fd32966b180a1d0e0b59c02be65a049 = $(`<div id="html_9fd32966b180a1d0e0b59c02be65a049" style="width: 100.0%; height: 100.0%;">     <div style="width: 250px;">         <h3 style="margin-bottom: 5px; color: #2c3e50;">Naples</h3>         <p style="margin: 2px 0;"><strong>Country:</strong> Italy</p>         <p style="margin: 2px 0;"><strong>UNESCO Sites:</strong> 2</p>         <hr style="margin: 8px 0;">         <p style="margin: 2px 0; font-style: italic;"><strong>Famous Site:</strong><br>Historic Centre with Spaccanapoli and underground ruins</p>     </div>     </div>`)[0];
+                popup_9e7eee243317c4fdd3cb1e1abc4a5527.setContent(html_9fd32966b180a1d0e0b59c02be65a049);
+            
+        
+
+        marker_24061ba9971ff85c65eaf2554dd7b237.bindPopup(popup_9e7eee243317c4fdd3cb1e1abc4a5527)
+        ;
+
+        
+    
+    
+            marker_24061ba9971ff85c65eaf2554dd7b237.bindTooltip(
+                `<div>
+                     Naples (2 sites)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_24061ba9971ff85c65eaf2554dd7b237.setIcon(icon_52192b4e224274f9ac2509146257fb73);
+            
+    
+            var marker_94bb923b299ba5a58656c6071cd3e27d = L.marker(
+                [27.1767, 78.0081],
+                {
+}
+            ).addTo(feature_group_bbf00fc6c7b564563639a229df703913);
+        
+    
+            var icon_f0d544b20af18ce101da22cef79049b1 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "university",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_08c49f448026507424dcfb83b12eb2fd = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_cd2b8451ff824f1083ce50b372047958 = $(`<div id="html_cd2b8451ff824f1083ce50b372047958" style="width: 100.0%; height: 100.0%;">     <div style="width: 250px;">         <h3 style="margin-bottom: 5px; color: #2c3e50;">Agra</h3>         <p style="margin: 2px 0;"><strong>Country:</strong> India</p>         <p style="margin: 2px 0;"><strong>UNESCO Sites:</strong> 3</p>         <hr style="margin: 8px 0;">         <p style="margin: 2px 0; font-style: italic;"><strong>Famous Site:</strong><br>Taj Mahal, iconic white marble mausoleum</p>     </div>     </div>`)[0];
+                popup_08c49f448026507424dcfb83b12eb2fd.setContent(html_cd2b8451ff824f1083ce50b372047958);
+            
+        
+
+        marker_94bb923b299ba5a58656c6071cd3e27d.bindPopup(popup_08c49f448026507424dcfb83b12eb2fd)
+        ;
+
+        
+    
+    
+            marker_94bb923b299ba5a58656c6071cd3e27d.bindTooltip(
+                `<div>
+                     Agra (3 sites)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_94bb923b299ba5a58656c6071cd3e27d.setIcon(icon_f0d544b20af18ce101da22cef79049b1);
+            
+    
+            var marker_be10166f82aa42932ee36b395ac2f809 = L.marker(
+                [26.9124, 75.7873],
+                {
+}
+            ).addTo(feature_group_bbf00fc6c7b564563639a229df703913);
+        
+    
+            var icon_1b8eab5723748b358663cfafa05867f2 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "university",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_da36ceb1de5aee4aad2ce6ef724bc3fe = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_66976fd178f58eb8845d11fbcff52673 = $(`<div id="html_66976fd178f58eb8845d11fbcff52673" style="width: 100.0%; height: 100.0%;">     <div style="width: 250px;">         <h3 style="margin-bottom: 5px; color: #2c3e50;">Jaipur</h3>         <p style="margin: 2px 0;"><strong>Country:</strong> India</p>         <p style="margin: 2px 0;"><strong>UNESCO Sites:</strong> 2</p>         <hr style="margin: 8px 0;">         <p style="margin: 2px 0; font-style: italic;"><strong>Famous Site:</strong><br>Jantar Mantar astronomical observatory and Jaipur City</p>     </div>     </div>`)[0];
+                popup_da36ceb1de5aee4aad2ce6ef724bc3fe.setContent(html_66976fd178f58eb8845d11fbcff52673);
+            
+        
+
+        marker_be10166f82aa42932ee36b395ac2f809.bindPopup(popup_da36ceb1de5aee4aad2ce6ef724bc3fe)
+        ;
+
+        
+    
+    
+            marker_be10166f82aa42932ee36b395ac2f809.bindTooltip(
+                `<div>
+                     Jaipur (2 sites)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_be10166f82aa42932ee36b395ac2f809.setIcon(icon_1b8eab5723748b358663cfafa05867f2);
+            
+    
+            var marker_fef57084791a154fcbcb45806b26baff = L.marker(
+                [23.0225, 72.5714],
+                {
+}
+            ).addTo(feature_group_bbf00fc6c7b564563639a229df703913);
+        
+    
+            var icon_3b37aec860f7d8639fe1ecf57ecfd86a = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "university",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_247c27f22c345bb68061ff4dec7f0060 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_5c92387e25b28e6cbc5491a8e1249b19 = $(`<div id="html_5c92387e25b28e6cbc5491a8e1249b19" style="width: 100.0%; height: 100.0%;">     <div style="width: 250px;">         <h3 style="margin-bottom: 5px; color: #2c3e50;">Ahmedabad</h3>         <p style="margin: 2px 0;"><strong>Country:</strong> India</p>         <p style="margin: 2px 0;"><strong>UNESCO Sites:</strong> 1</p>         <hr style="margin: 8px 0;">         <p style="margin: 2px 0; font-style: italic;"><strong>Famous Site:</strong><br>Historic City of Ahmadabad with Indo-Islamic architecture</p>     </div>     </div>`)[0];
+                popup_247c27f22c345bb68061ff4dec7f0060.setContent(html_5c92387e25b28e6cbc5491a8e1249b19);
+            
+        
+
+        marker_fef57084791a154fcbcb45806b26baff.bindPopup(popup_247c27f22c345bb68061ff4dec7f0060)
+        ;
+
+        
+    
+    
+            marker_fef57084791a154fcbcb45806b26baff.bindTooltip(
+                `<div>
+                     Ahmedabad (1 sites)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_fef57084791a154fcbcb45806b26baff.setIcon(icon_3b37aec860f7d8639fe1ecf57ecfd86a);
+            
+    
+            var marker_4e52201cde4c5b36f1d4056701275eac = L.marker(
+                [19.076, 72.8777],
+                {
+}
+            ).addTo(feature_group_bbf00fc6c7b564563639a229df703913);
+        
+    
+            var icon_fed4d66d98732372ae73eacf005ba7aa = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "university",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_04937f444fedbe8d8c5b80bce81927e1 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_8cbaee6388349074e1eeeceba893cdfb = $(`<div id="html_8cbaee6388349074e1eeeceba893cdfb" style="width: 100.0%; height: 100.0%;">     <div style="width: 250px;">         <h3 style="margin-bottom: 5px; color: #2c3e50;">Mumbai</h3>         <p style="margin: 2px 0;"><strong>Country:</strong> India</p>         <p style="margin: 2px 0;"><strong>UNESCO Sites:</strong> 2</p>         <hr style="margin: 8px 0;">         <p style="margin: 2px 0; font-style: italic;"><strong>Famous Site:</strong><br>Victorian Gothic and Art Deco Ensembles of Mumbai</p>     </div>     </div>`)[0];
+                popup_04937f444fedbe8d8c5b80bce81927e1.setContent(html_8cbaee6388349074e1eeeceba893cdfb);
+            
+        
+
+        marker_4e52201cde4c5b36f1d4056701275eac.bindPopup(popup_04937f444fedbe8d8c5b80bce81927e1)
+        ;
+
+        
+    
+    
+            marker_4e52201cde4c5b36f1d4056701275eac.bindTooltip(
+                `<div>
+                     Mumbai (2 sites)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_4e52201cde4c5b36f1d4056701275eac.setIcon(icon_fed4d66d98732372ae73eacf005ba7aa);
+            
+    
+            var marker_3208df81458ccc508219ddfd35f16b2b = L.marker(
+                [-0.1807, -78.4678],
+                {
+}
+            ).addTo(feature_group_bbf00fc6c7b564563639a229df703913);
+        
+    
+            var icon_03f4257b4921129165dc18d0d4b3155e = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "university",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_26dc13041bf734f74529dc11a45ee2b5 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_5ad8c191b249fa95b47ed668d1f6c1e6 = $(`<div id="html_5ad8c191b249fa95b47ed668d1f6c1e6" style="width: 100.0%; height: 100.0%;">     <div style="width: 250px;">         <h3 style="margin-bottom: 5px; color: #2c3e50;">Quito</h3>         <p style="margin: 2px 0;"><strong>Country:</strong> Ecuador</p>         <p style="margin: 2px 0;"><strong>UNESCO Sites:</strong> 1</p>         <hr style="margin: 8px 0;">         <p style="margin: 2px 0; font-style: italic;"><strong>Famous Site:</strong><br>City of Quito, best-preserved historic center in Americas</p>     </div>     </div>`)[0];
+                popup_26dc13041bf734f74529dc11a45ee2b5.setContent(html_5ad8c191b249fa95b47ed668d1f6c1e6);
+            
+        
+
+        marker_3208df81458ccc508219ddfd35f16b2b.bindPopup(popup_26dc13041bf734f74529dc11a45ee2b5)
+        ;
+
+        
+    
+    
+            marker_3208df81458ccc508219ddfd35f16b2b.bindTooltip(
+                `<div>
+                     Quito (1 sites)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_3208df81458ccc508219ddfd35f16b2b.setIcon(icon_03f4257b4921129165dc18d0d4b3155e);
+            
+    
+            var marker_2e0de170d13dedd6e30b63340d59ebdc = L.marker(
+                [23.1136, -82.3666],
+                {
+}
+            ).addTo(feature_group_bbf00fc6c7b564563639a229df703913);
+        
+    
+            var icon_be66e5f310f8c79a389b627565109f95 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "university",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_e66f54d67d2616c8711fc8248b8a4aaf = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_f25127cf29be87d3c76319f205389ec4 = $(`<div id="html_f25127cf29be87d3c76319f205389ec4" style="width: 100.0%; height: 100.0%;">     <div style="width: 250px;">         <h3 style="margin-bottom: 5px; color: #2c3e50;">Havana</h3>         <p style="margin: 2px 0;"><strong>Country:</strong> Cuba</p>         <p style="margin: 2px 0;"><strong>UNESCO Sites:</strong> 1</p>         <hr style="margin: 8px 0;">         <p style="margin: 2px 0; font-style: italic;"><strong>Famous Site:</strong><br>Old Havana with colonial architecture and fortifications</p>     </div>     </div>`)[0];
+                popup_e66f54d67d2616c8711fc8248b8a4aaf.setContent(html_f25127cf29be87d3c76319f205389ec4);
+            
+        
+
+        marker_2e0de170d13dedd6e30b63340d59ebdc.bindPopup(popup_e66f54d67d2616c8711fc8248b8a4aaf)
+        ;
+
+        
+    
+    
+            marker_2e0de170d13dedd6e30b63340d59ebdc.bindTooltip(
+                `<div>
+                     Havana (1 sites)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_2e0de170d13dedd6e30b63340d59ebdc.setIcon(icon_be66e5f310f8c79a389b627565109f95);
+            
+    
+            var marker_84e6c123db7a57abb23bcd87e115ea83 = L.marker(
+                [-12.9714, -38.5014],
+                {
+}
+            ).addTo(feature_group_bbf00fc6c7b564563639a229df703913);
+        
+    
+            var icon_cff01c6527d440dfaada800585636ff4 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "university",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_a54a948ac5d461b15b006e9fbac3a8ea = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_76e6ee9e049cd2594d5e51f76a0926a9 = $(`<div id="html_76e6ee9e049cd2594d5e51f76a0926a9" style="width: 100.0%; height: 100.0%;">     <div style="width: 250px;">         <h3 style="margin-bottom: 5px; color: #2c3e50;">Salvador</h3>         <p style="margin: 2px 0;"><strong>Country:</strong> Brazil</p>         <p style="margin: 2px 0;"><strong>UNESCO Sites:</strong> 1</p>         <hr style="margin: 8px 0;">         <p style="margin: 2px 0; font-style: italic;"><strong>Famous Site:</strong><br>Historic Centre of Salvador de Bahia</p>     </div>     </div>`)[0];
+                popup_a54a948ac5d461b15b006e9fbac3a8ea.setContent(html_76e6ee9e049cd2594d5e51f76a0926a9);
+            
+        
+
+        marker_84e6c123db7a57abb23bcd87e115ea83.bindPopup(popup_a54a948ac5d461b15b006e9fbac3a8ea)
+        ;
+
+        
+    
+    
+            marker_84e6c123db7a57abb23bcd87e115ea83.bindTooltip(
+                `<div>
+                     Salvador (1 sites)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_84e6c123db7a57abb23bcd87e115ea83.setIcon(icon_cff01c6527d440dfaada800585636ff4);
+            
+    
+            var marker_5578a13f1b0e43b0d84c8bb54e3bc9a6 = L.marker(
+                [35.8989, 14.5146],
+                {
+}
+            ).addTo(feature_group_bbf00fc6c7b564563639a229df703913);
+        
+    
+            var icon_ae8d34468c2ca7799b50be41c59ab905 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "university",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_f1647180d452528611b9988ec8fa8126 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_019d100173738f9ec5ece94e3d95271d = $(`<div id="html_019d100173738f9ec5ece94e3d95271d" style="width: 100.0%; height: 100.0%;">     <div style="width: 250px;">         <h3 style="margin-bottom: 5px; color: #2c3e50;">Valletta</h3>         <p style="margin: 2px 0;"><strong>Country:</strong> Malta</p>         <p style="margin: 2px 0;"><strong>UNESCO Sites:</strong> 1</p>         <hr style="margin: 8px 0;">         <p style="margin: 2px 0; font-style: italic;"><strong>Famous Site:</strong><br>City of Valletta, fortress city built by the Knights of Malta</p>     </div>     </div>`)[0];
+                popup_f1647180d452528611b9988ec8fa8126.setContent(html_019d100173738f9ec5ece94e3d95271d);
+            
+        
+
+        marker_5578a13f1b0e43b0d84c8bb54e3bc9a6.bindPopup(popup_f1647180d452528611b9988ec8fa8126)
+        ;
+
+        
+    
+    
+            marker_5578a13f1b0e43b0d84c8bb54e3bc9a6.bindTooltip(
+                `<div>
+                     Valletta (1 sites)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_5578a13f1b0e43b0d84c8bb54e3bc9a6.setIcon(icon_ae8d34468c2ca7799b50be41c59ab905);
+            
+    
+            var marker_29f5ea436dd4606a5e69376ee6ae507a = L.marker(
+                [55.9533, -3.1883],
+                {
+}
+            ).addTo(feature_group_bbf00fc6c7b564563639a229df703913);
+        
+    
+            var icon_7563425431551ee49032c7522ba12984 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "university",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_13cd1b84be66de83358f33177d5e3d82 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_ed4095d3991b2990785ec25e71143b26 = $(`<div id="html_ed4095d3991b2990785ec25e71143b26" style="width: 100.0%; height: 100.0%;">     <div style="width: 250px;">         <h3 style="margin-bottom: 5px; color: #2c3e50;">Edinburgh</h3>         <p style="margin: 2px 0;"><strong>Country:</strong> UK</p>         <p style="margin: 2px 0;"><strong>UNESCO Sites:</strong> 1</p>         <hr style="margin: 8px 0;">         <p style="margin: 2px 0; font-style: italic;"><strong>Famous Site:</strong><br>Old and New Towns of Edinburgh with Edinburgh Castle</p>     </div>     </div>`)[0];
+                popup_13cd1b84be66de83358f33177d5e3d82.setContent(html_ed4095d3991b2990785ec25e71143b26);
+            
+        
+
+        marker_29f5ea436dd4606a5e69376ee6ae507a.bindPopup(popup_13cd1b84be66de83358f33177d5e3d82)
+        ;
+
+        
+    
+    
+            marker_29f5ea436dd4606a5e69376ee6ae507a.bindTooltip(
+                `<div>
+                     Edinburgh (1 sites)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_29f5ea436dd4606a5e69376ee6ae507a.setIcon(icon_7563425431551ee49032c7522ba12984);
+            
+    
+            var marker_ee0b4a2a14ca8fc1e1998f5a65e09984 = L.marker(
+                [51.2093, 3.2242],
+                {
+}
+            ).addTo(feature_group_bbf00fc6c7b564563639a229df703913);
+        
+    
+            var icon_d16e4f2cda21416e50e442d7551afffb = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "university",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_62d884fb814839189e3acbee464fdc5f = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_af43b9f2f122a4b4d08a6e3b52e4e469 = $(`<div id="html_af43b9f2f122a4b4d08a6e3b52e4e469" style="width: 100.0%; height: 100.0%;">     <div style="width: 250px;">         <h3 style="margin-bottom: 5px; color: #2c3e50;">Bruges</h3>         <p style="margin: 2px 0;"><strong>Country:</strong> Belgium</p>         <p style="margin: 2px 0;"><strong>UNESCO Sites:</strong> 1</p>         <hr style="margin: 8px 0;">         <p style="margin: 2px 0; font-style: italic;"><strong>Famous Site:</strong><br>Historic Centre of Brugge with medieval architecture</p>     </div>     </div>`)[0];
+                popup_62d884fb814839189e3acbee464fdc5f.setContent(html_af43b9f2f122a4b4d08a6e3b52e4e469);
+            
+        
+
+        marker_ee0b4a2a14ca8fc1e1998f5a65e09984.bindPopup(popup_62d884fb814839189e3acbee464fdc5f)
+        ;
+
+        
+    
+    
+            marker_ee0b4a2a14ca8fc1e1998f5a65e09984.bindTooltip(
+                `<div>
+                     Bruges (1 sites)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_ee0b4a2a14ca8fc1e1998f5a65e09984.setIcon(icon_d16e4f2cda21416e50e442d7551afffb);
+            
+    
+            var marker_22239f25207643005212d94b8a779b11 = L.marker(
+                [19.8833, 102.1333],
+                {
+}
+            ).addTo(feature_group_bbf00fc6c7b564563639a229df703913);
+        
+    
+            var icon_4f6408b2cd8ebd7a5d46a491a38be300 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "university",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_075a3e8a4a548a5d954ba3b8144b1f1a = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_35ec8278891907c7ae215fd0857ebd53 = $(`<div id="html_35ec8278891907c7ae215fd0857ebd53" style="width: 100.0%; height: 100.0%;">     <div style="width: 250px;">         <h3 style="margin-bottom: 5px; color: #2c3e50;">Luang Prabang</h3>         <p style="margin: 2px 0;"><strong>Country:</strong> Laos</p>         <p style="margin: 2px 0;"><strong>UNESCO Sites:</strong> 1</p>         <hr style="margin: 8px 0;">         <p style="margin: 2px 0; font-style: italic;"><strong>Famous Site:</strong><br>Town of Luang Prabang with Buddhist temples and colonial architecture</p>     </div>     </div>`)[0];
+                popup_075a3e8a4a548a5d954ba3b8144b1f1a.setContent(html_35ec8278891907c7ae215fd0857ebd53);
+            
+        
+
+        marker_22239f25207643005212d94b8a779b11.bindPopup(popup_075a3e8a4a548a5d954ba3b8144b1f1a)
+        ;
+
+        
+    
+    
+            marker_22239f25207643005212d94b8a779b11.bindTooltip(
+                `<div>
+                     Luang Prabang (1 sites)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_22239f25207643005212d94b8a779b11.setIcon(icon_4f6408b2cd8ebd7a5d46a491a38be300);
+            
+    
+            feature_group_bbf00fc6c7b564563639a229df703913.addTo(map_3e1a3a337642c59c71e9706920553933);
+        
+    
+            var layer_control_5969d59a804b75eda66816d195b495d6_layers = {
+                base_layers : {
+                    "openstreetmap" : tile_layer_b703bf1ef5273a7d2b69d2b42d8fc3fa,
+                },
+                overlays :  {
+                    "UNESCO Cities" : feature_group_bbf00fc6c7b564563639a229df703913,
+                },
+            };
+            let layer_control_5969d59a804b75eda66816d195b495d6 = L.control.layers(
+                layer_control_5969d59a804b75eda66816d195b495d6_layers.base_layers,
+                layer_control_5969d59a804b75eda66816d195b495d6_layers.overlays,
+                {
+  "position": "topright",
+  "collapsed": true,
+  "autoZIndex": true,
+}
+            ).addTo(map_3e1a3a337642c59c71e9706920553933);
+
+        
+    
+            var tile_layer_4c3950865f52d84cbe7ad81c6c04c063 = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {"attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors", "detect_retina": false, "max_native_zoom": 19, "max_zoom": 19, "min_zoom": 0, "no_wrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            );
+            var mini_map_42aca6ac9680443bb131cbf48f078e6d = new L.Control.MiniMap(
+                tile_layer_4c3950865f52d84cbe7ad81c6c04c063,
+                {
+  "position": "bottomright",
+  "width": 150,
+  "height": 150,
+  "collapsedWidth": 25,
+  "collapsedHeight": 25,
+  "zoomLevelOffset": -5,
+  "centerFixed": false,
+  "zoomAnimation": false,
+  "toggleDisplay": false,
+  "autoToggleDisplay": false,
+  "minimized": false,
+}
+            );
+            map_3e1a3a337642c59c71e9706920553933.addControl(mini_map_42aca6ac9680443bb131cbf48f078e6d);
+        
+    
+            L.control.fullscreen(
+                {
+  "position": "topleft",
+  "title": "Full Screen",
+  "titleCancel": "Exit Full Screen",
+  "forceSeparateButton": false,
+}
+            ).addTo(map_3e1a3a337642c59c71e9706920553933);
+        
+</script>
+</html>

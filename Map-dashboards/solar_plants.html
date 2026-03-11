@@ -1,0 +1,1654 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_9154694d670ac68bba80901112108001 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+    <script src="https://cdn.jsdelivr.net/npm/leaflet.fullscreen@3.0.0/Control.FullScreen.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet.fullscreen@3.0.0/Control.FullScreen.css"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-minimap/3.6.1/Control.MiniMap.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet-minimap/3.6.1/Control.MiniMap.css"/>
+</head>
+<body>
+    
+    
+             <h3 align="center" style="font-size:20px"><b>World's 30 Largest Solar Power Plants</b></h3>
+             
+    
+<div style="position: fixed; 
+     bottom: 50px; left: 50px; width: 180px; height: 150px; 
+     background-color: white; border:2px solid grey; z-index:9999;
+     font-size:14px; padding: 10px;
+     ">
+     <b>Continent Legend</b><br>
+     <i class="fa fa-circle" style="color:orange"></i> Asia<br>
+     <i class="fa fa-circle" style="color:green"></i> North America<br>
+     <i class="fa fa-circle" style="color:blue"></i> Europe<br>
+     <i class="fa fa-circle" style="color:red"></i> Africa<br>
+     <i class="fa fa-circle" style="color:purple"></i> South America<br>
+     <i class="fa fa-circle" style="color:pink"></i> Oceania
+</div>
+    
+            <div class="folium-map" id="map_9154694d670ac68bba80901112108001" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_9154694d670ac68bba80901112108001 = L.map(
+                "map_9154694d670ac68bba80901112108001",
+                {
+                    center: [30.0, 0.0],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 2,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_947366a80a81e2ed67dc9c70e7a1b753 = L.tileLayer(
+                "https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 20,
+  "maxNativeZoom": 20,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca href=\"https://carto.com/attributions\"\u003eCARTO\u003c/a\u003e",
+  "subdomains": "abcd",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_947366a80a81e2ed67dc9c70e7a1b753.addTo(map_9154694d670ac68bba80901112108001);
+        
+    
+            var feature_group_05eca1c4fae631ace259ae05eeea7baf = L.featureGroup(
+                {
+}
+            );
+        
+    
+            var marker_254f2c9bbb39f823bee923e70a19a704 = L.marker(
+                [36.0, 97.5],
+                {
+}
+            ).addTo(feature_group_05eca1c4fae631ace259ae05eeea7baf);
+        
+    
+            var icon_9e601c73f40ce4c9b9e38aeee86c5267 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "sun-o",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_57d4f770a064e9e2bc3ff030906d2115 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_7ad1377193c6442318dd2753d8f3e17c = $(`<div id="html_7ad1377193c6442318dd2753d8f3e17c" style="width: 100.0%; height: 100.0%;"><b>Talatan Solar Park</b><br>Country: China<br>Capacity: 15600 MW<br>Year: 2011-2023<br>Households Powered: 3,900,000</div>`)[0];
+                popup_57d4f770a064e9e2bc3ff030906d2115.setContent(html_7ad1377193c6442318dd2753d8f3e17c);
+            
+        
+
+        marker_254f2c9bbb39f823bee923e70a19a704.bindPopup(popup_57d4f770a064e9e2bc3ff030906d2115)
+        ;
+
+        
+    
+    
+            marker_254f2c9bbb39f823bee923e70a19a704.bindTooltip(
+                `<div>
+                     Talatan Solar Park
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_254f2c9bbb39f823bee923e70a19a704.setIcon(icon_9e601c73f40ce4c9b9e38aeee86c5267);
+            
+    
+            var marker_a290f7780d244b045a53d5949676de55 = L.marker(
+                [38.2, 106.5],
+                {
+}
+            ).addTo(feature_group_05eca1c4fae631ace259ae05eeea7baf);
+        
+    
+            var icon_45c3e55d84200d122cc0e94cb66089fd = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "sun-o",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_2eb07ada1b8e0f0f5077ea17e8651d24 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_5ddf2a4f814f3525e916547c9ad4412b = $(`<div id="html_5ddf2a4f814f3525e916547c9ad4412b" style="width: 100.0%; height: 100.0%;"><b>Ningdong Solar Park</b><br>Country: China<br>Capacity: 13640 MW<br>Year: N/A<br>Households Powered: 3,410,000</div>`)[0];
+                popup_2eb07ada1b8e0f0f5077ea17e8651d24.setContent(html_5ddf2a4f814f3525e916547c9ad4412b);
+            
+        
+
+        marker_a290f7780d244b045a53d5949676de55.bindPopup(popup_2eb07ada1b8e0f0f5077ea17e8651d24)
+        ;
+
+        
+    
+    
+            marker_a290f7780d244b045a53d5949676de55.bindTooltip(
+                `<div>
+                     Ningdong Solar Park
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_a290f7780d244b045a53d5949676de55.setIcon(icon_45c3e55d84200d122cc0e94cb66089fd);
+            
+    
+            var marker_7ca6543f40a0a324c3e1428f29ca7b27 = L.marker(
+                [40.5, 107.2],
+                {
+}
+            ).addTo(feature_group_05eca1c4fae631ace259ae05eeea7baf);
+        
+    
+            var icon_07ac6b01fe5bbdd12e589c0327ff2e82 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "sun-o",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_50164a4c807d4cde03fe2a4ebb46f0b6 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_7e69cb0a86c9995ee80f10ad469ebd4a = $(`<div id="html_7e69cb0a86c9995ee80f10ad469ebd4a" style="width: 100.0%; height: 100.0%;"><b>Urtmorin Solar Park</b><br>Country: China<br>Capacity: 6100 MW<br>Year: 2021<br>Households Powered: 1,525,000</div>`)[0];
+                popup_50164a4c807d4cde03fe2a4ebb46f0b6.setContent(html_7e69cb0a86c9995ee80f10ad469ebd4a);
+            
+        
+
+        marker_7ca6543f40a0a324c3e1428f29ca7b27.bindPopup(popup_50164a4c807d4cde03fe2a4ebb46f0b6)
+        ;
+
+        
+    
+    
+            marker_7ca6543f40a0a324c3e1428f29ca7b27.bindTooltip(
+                `<div>
+                     Urtmorin Solar Park
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_7ca6543f40a0a324c3e1428f29ca7b27.setIcon(icon_07ac6b01fe5bbdd12e589c0327ff2e82);
+            
+    
+            var marker_bc8c7f2245185a1b34411026d030fc31 = L.marker(
+                [44.3, 87.5],
+                {
+}
+            ).addTo(feature_group_05eca1c4fae631ace259ae05eeea7baf);
+        
+    
+            var icon_d1eea35fef08ecfadda4a14a0c8f06db = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "sun-o",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_b5b6c789cf5c232734e09fdb98840f58 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_4e288a15dde9cb8d6167caa7d4cee410 = $(`<div id="html_4e288a15dde9cb8d6167caa7d4cee410" style="width: 100.0%; height: 100.0%;"><b>Midong Solar Park</b><br>Country: China<br>Capacity: 5000 MW<br>Year: 2024<br>Households Powered: 1,250,000</div>`)[0];
+                popup_b5b6c789cf5c232734e09fdb98840f58.setContent(html_4e288a15dde9cb8d6167caa7d4cee410);
+            
+        
+
+        marker_bc8c7f2245185a1b34411026d030fc31.bindPopup(popup_b5b6c789cf5c232734e09fdb98840f58)
+        ;
+
+        
+    
+    
+            marker_bc8c7f2245185a1b34411026d030fc31.bindTooltip(
+                `<div>
+                     Midong Solar Park
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_bc8c7f2245185a1b34411026d030fc31.setIcon(icon_d1eea35fef08ecfadda4a14a0c8f06db);
+            
+    
+            var marker_5ea15772e661f91a50229eb874592f60 = L.marker(
+                [36.4, 94.9],
+                {
+}
+            ).addTo(feature_group_05eca1c4fae631ace259ae05eeea7baf);
+        
+    
+            var icon_b7b1513a81684904ba1d8341c08f9c26 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "sun-o",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_45e94eee87c4de14ebd0b81bdd53f40d = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_dab9ae3141562d75a6b9ffe498044feb = $(`<div id="html_dab9ae3141562d75a6b9ffe498044feb" style="width: 100.0%; height: 100.0%;"><b>Golmud Solar Park</b><br>Country: China<br>Capacity: 2800 MW<br>Year: 2019<br>Households Powered: 700,000</div>`)[0];
+                popup_45e94eee87c4de14ebd0b81bdd53f40d.setContent(html_dab9ae3141562d75a6b9ffe498044feb);
+            
+        
+
+        marker_5ea15772e661f91a50229eb874592f60.bindPopup(popup_45e94eee87c4de14ebd0b81bdd53f40d)
+        ;
+
+        
+    
+    
+            marker_5ea15772e661f91a50229eb874592f60.bindTooltip(
+                `<div>
+                     Golmud Solar Park
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_5ea15772e661f91a50229eb874592f60.setIcon(icon_b7b1513a81684904ba1d8341c08f9c26);
+            
+    
+            var marker_a94e80a61c08a1a8648692646f1f50c2 = L.marker(
+                [40.6, 107.5],
+                {
+}
+            ).addTo(feature_group_05eca1c4fae631ace259ae05eeea7baf);
+        
+    
+            var icon_31ee35ae255e5f8cdea40c00b41fa3fc = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "sun-o",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_3529d720adaef7206c3091fef8a80b00 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_ec081d56aaa778d07f0510469a6deba8 = $(`<div id="html_ec081d56aaa778d07f0510469a6deba8" style="width: 100.0%; height: 100.0%;"><b>Hobq Solar Park</b><br>Country: China<br>Capacity: 4000 MW<br>Year: 2024<br>Households Powered: 1,000,000</div>`)[0];
+                popup_3529d720adaef7206c3091fef8a80b00.setContent(html_ec081d56aaa778d07f0510469a6deba8);
+            
+        
+
+        marker_a94e80a61c08a1a8648692646f1f50c2.bindPopup(popup_3529d720adaef7206c3091fef8a80b00)
+        ;
+
+        
+    
+    
+            marker_a94e80a61c08a1a8648692646f1f50c2.bindTooltip(
+                `<div>
+                     Hobq Solar Park
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_a94e80a61c08a1a8648692646f1f50c2.setIcon(icon_31ee35ae255e5f8cdea40c00b41fa3fc);
+            
+    
+            var marker_2d551be3b84d6b613405a9c09254b4e0 = L.marker(
+                [39.0, 88.2],
+                {
+}
+            ).addTo(feature_group_05eca1c4fae631ace259ae05eeea7baf);
+        
+    
+            var icon_5f72bbd158b787594a73fed49d645435 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "sun-o",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_8ac8a09e1a55b3a99794385ced2b22b0 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_a50cd1cf3744c6679bfb13ef49e8088c = $(`<div id="html_a50cd1cf3744c6679bfb13ef49e8088c" style="width: 100.0%; height: 100.0%;"><b>Ruoqiang Solar Park</b><br>Country: China<br>Capacity: 4000 MW<br>Year: 2024<br>Households Powered: 1,000,000</div>`)[0];
+                popup_8ac8a09e1a55b3a99794385ced2b22b0.setContent(html_a50cd1cf3744c6679bfb13ef49e8088c);
+            
+        
+
+        marker_2d551be3b84d6b613405a9c09254b4e0.bindPopup(popup_8ac8a09e1a55b3a99794385ced2b22b0)
+        ;
+
+        
+    
+    
+            marker_2d551be3b84d6b613405a9c09254b4e0.bindTooltip(
+                `<div>
+                     Ruoqiang Solar Park
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_2d551be3b84d6b613405a9c09254b4e0.setIcon(icon_5f72bbd158b787594a73fed49d645435);
+            
+    
+            var marker_0b7900d6ec9f57614eda82fee8c5401a = L.marker(
+                [39.5, 108.5],
+                {
+}
+            ).addTo(feature_group_05eca1c4fae631ace259ae05eeea7baf);
+        
+    
+            var icon_827dd79fed29735be7c0525ccb57de55 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "sun-o",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_2cd4bd04373dd5bb8de952dccc42acca = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_7090a3fcbaac813f9b225a67ca69441d = $(`<div id="html_7090a3fcbaac813f9b225a67ca69441d" style="width: 100.0%; height: 100.0%;"><b>Otog Front Banner Solar Park</b><br>Country: China<br>Capacity: 4000 MW<br>Year: 2024<br>Households Powered: 1,000,000</div>`)[0];
+                popup_2cd4bd04373dd5bb8de952dccc42acca.setContent(html_7090a3fcbaac813f9b225a67ca69441d);
+            
+        
+
+        marker_0b7900d6ec9f57614eda82fee8c5401a.bindPopup(popup_2cd4bd04373dd5bb8de952dccc42acca)
+        ;
+
+        
+    
+    
+            marker_0b7900d6ec9f57614eda82fee8c5401a.bindTooltip(
+                `<div>
+                     Otog Front Banner Solar Park
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_0b7900d6ec9f57614eda82fee8c5401a.setIcon(icon_827dd79fed29735be7c0525ccb57de55);
+            
+    
+            var marker_01e312e8bbada5357066d20069742276 = L.marker(
+                [27.5, 71.8],
+                {
+}
+            ).addTo(feature_group_05eca1c4fae631ace259ae05eeea7baf);
+        
+    
+            var icon_eba750510b4dee90fc2ec008197d1cbf = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "sun-o",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_f5296973df1bb24d9bfe45a6445b36f9 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_31450a686736f992866e6ab0ff583c44 = $(`<div id="html_31450a686736f992866e6ab0ff583c44" style="width: 100.0%; height: 100.0%;"><b>Bhadla Solar Park</b><br>Country: India<br>Capacity: 2700 MW<br>Year: 2017-2018<br>Households Powered: 675,000</div>`)[0];
+                popup_f5296973df1bb24d9bfe45a6445b36f9.setContent(html_31450a686736f992866e6ab0ff583c44);
+            
+        
+
+        marker_01e312e8bbada5357066d20069742276.bindPopup(popup_f5296973df1bb24d9bfe45a6445b36f9)
+        ;
+
+        
+    
+    
+            marker_01e312e8bbada5357066d20069742276.bindTooltip(
+                `<div>
+                     Bhadla Solar Park
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_01e312e8bbada5357066d20069742276.setIcon(icon_eba750510b4dee90fc2ec008197d1cbf);
+            
+    
+            var marker_0c5d565c914e284da6fe11d2777c21f3 = L.marker(
+                [14.2, 77.5],
+                {
+}
+            ).addTo(feature_group_05eca1c4fae631ace259ae05eeea7baf);
+        
+    
+            var icon_3ed3f743b6271e346387325abb8d1edb = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "sun-o",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_5cb4fc20cdab082b3638766ebe19c2a6 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_4bc3892a9fa410af8104818218a97b48 = $(`<div id="html_4bc3892a9fa410af8104818218a97b48" style="width: 100.0%; height: 100.0%;"><b>Pavagada Solar Park</b><br>Country: India<br>Capacity: 2050 MW<br>Year: 2018-2019<br>Households Powered: 512,500</div>`)[0];
+                popup_5cb4fc20cdab082b3638766ebe19c2a6.setContent(html_4bc3892a9fa410af8104818218a97b48);
+            
+        
+
+        marker_0c5d565c914e284da6fe11d2777c21f3.bindPopup(popup_5cb4fc20cdab082b3638766ebe19c2a6)
+        ;
+
+        
+    
+    
+            marker_0c5d565c914e284da6fe11d2777c21f3.bindTooltip(
+                `<div>
+                     Pavagada Solar Park
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_0c5d565c914e284da6fe11d2777c21f3.setIcon(icon_3ed3f743b6271e346387325abb8d1edb);
+            
+    
+            var marker_919d796b49ec1283578caa4137b9de12 = L.marker(
+                [24.9, 55.3],
+                {
+}
+            ).addTo(feature_group_05eca1c4fae631ace259ae05eeea7baf);
+        
+    
+            var icon_989791327501fef2954535d8757c9267 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "sun-o",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_4352d3591de5a51318739b28eaa042b4 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_3fca532fa35402e1e9d20c043023eab6 = $(`<div id="html_3fca532fa35402e1e9d20c043023eab6" style="width: 100.0%; height: 100.0%;"><b>Mohammed bin Rashid Al Maktoum Solar Park</b><br>Country: UAE<br>Capacity: 2027 MW<br>Year: 2013-2022<br>Households Powered: 506,750</div>`)[0];
+                popup_4352d3591de5a51318739b28eaa042b4.setContent(html_3fca532fa35402e1e9d20c043023eab6);
+            
+        
+
+        marker_919d796b49ec1283578caa4137b9de12.bindPopup(popup_4352d3591de5a51318739b28eaa042b4)
+        ;
+
+        
+    
+    
+            marker_919d796b49ec1283578caa4137b9de12.bindTooltip(
+                `<div>
+                     Mohammed bin Rashid Al Maktoum Solar Park
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_919d796b49ec1283578caa4137b9de12.setIcon(icon_989791327501fef2954535d8757c9267);
+            
+    
+            var marker_f5f257e1cd0a14ad64d4555ed82c852f = L.marker(
+                [24.0, 54.6],
+                {
+}
+            ).addTo(feature_group_05eca1c4fae631ace259ae05eeea7baf);
+        
+    
+            var icon_7e374e820ee2af087a680b8181faa07b = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "sun-o",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_83d7fae7e1d8b36de813e2894cf24091 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_5b8b8868ec713d921e0fd9d055f19e72 = $(`<div id="html_5b8b8868ec713d921e0fd9d055f19e72" style="width: 100.0%; height: 100.0%;"><b>Al Dhafra Solar Project</b><br>Country: UAE<br>Capacity: 2000 MW<br>Year: 2023<br>Households Powered: 500,000</div>`)[0];
+                popup_83d7fae7e1d8b36de813e2894cf24091.setContent(html_5b8b8868ec713d921e0fd9d055f19e72);
+            
+        
+
+        marker_f5f257e1cd0a14ad64d4555ed82c852f.bindPopup(popup_83d7fae7e1d8b36de813e2894cf24091)
+        ;
+
+        
+    
+    
+            marker_f5f257e1cd0a14ad64d4555ed82c852f.bindTooltip(
+                `<div>
+                     Al Dhafra Solar Project
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_f5f257e1cd0a14ad64d4555ed82c852f.setIcon(icon_7e374e820ee2af087a680b8181faa07b);
+            
+    
+            var marker_04dd00e2499e39057735ed50d93b1036 = L.marker(
+                [37.7, 107.6],
+                {
+}
+            ).addTo(feature_group_05eca1c4fae631ace259ae05eeea7baf);
+        
+    
+            var icon_d99a34ac550881ce27042b727c669521 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "sun-o",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_b8c0a6913057650e4950c7aeeaf17264 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_a9a1adea9a6ef7abdcc2fab21d2aa101 = $(`<div id="html_a9a1adea9a6ef7abdcc2fab21d2aa101" style="width: 100.0%; height: 100.0%;"><b>Tengger Desert Solar Park</b><br>Country: China<br>Capacity: 1547 MW<br>Year: 2017<br>Households Powered: 386,750</div>`)[0];
+                popup_b8c0a6913057650e4950c7aeeaf17264.setContent(html_a9a1adea9a6ef7abdcc2fab21d2aa101);
+            
+        
+
+        marker_04dd00e2499e39057735ed50d93b1036.bindPopup(popup_b8c0a6913057650e4950c7aeeaf17264)
+        ;
+
+        
+    
+    
+            marker_04dd00e2499e39057735ed50d93b1036.bindTooltip(
+                `<div>
+                     Tengger Desert Solar Park
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_04dd00e2499e39057735ed50d93b1036.setIcon(icon_d99a34ac550881ce27042b727c669521);
+            
+    
+            var marker_08b59250e43402e4b6c8fa6a7bb0579d = L.marker(
+                [40.0, 113.3],
+                {
+}
+            ).addTo(feature_group_05eca1c4fae631ace259ae05eeea7baf);
+        
+    
+            var icon_686331187ee2919ba8d276899d17b761 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "sun-o",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_142998cb6b1fcadd84dc9a7b557ffc9d = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_b1b97abb08c10a62576aae17b7246dc2 = $(`<div id="html_b1b97abb08c10a62576aae17b7246dc2" style="width: 100.0%; height: 100.0%;"><b>Datong Solar Power Top Runner Base</b><br>Country: China<br>Capacity: 1100 MW<br>Year: N/A<br>Households Powered: 275,000</div>`)[0];
+                popup_142998cb6b1fcadd84dc9a7b557ffc9d.setContent(html_b1b97abb08c10a62576aae17b7246dc2);
+            
+        
+
+        marker_08b59250e43402e4b6c8fa6a7bb0579d.bindPopup(popup_142998cb6b1fcadd84dc9a7b557ffc9d)
+        ;
+
+        
+    
+    
+            marker_08b59250e43402e4b6c8fa6a7bb0579d.bindTooltip(
+                `<div>
+                     Datong Solar Power Top Runner Base
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_08b59250e43402e4b6c8fa6a7bb0579d.setIcon(icon_686331187ee2919ba8d276899d17b761);
+            
+    
+            var marker_41694915a9cd61b0bfa5cba9bb2c508b = L.marker(
+                [38.5, 102.2],
+                {
+}
+            ).addTo(feature_group_05eca1c4fae631ace259ae05eeea7baf);
+        
+    
+            var icon_2302f969a594fb64d76ee96e29dd64f8 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "sun-o",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_026598147d1cef86bab284c4afcdd417 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_159a9c8682ee8c1311e3cb916e4e6eee = $(`<div id="html_159a9c8682ee8c1311e3cb916e4e6eee" style="width: 100.0%; height: 100.0%;"><b>Jinchuan Solar Park</b><br>Country: China<br>Capacity: 1030 MW<br>Year: 2013<br>Households Powered: 257,500</div>`)[0];
+                popup_026598147d1cef86bab284c4afcdd417.setContent(html_159a9c8682ee8c1311e3cb916e4e6eee);
+            
+        
+
+        marker_41694915a9cd61b0bfa5cba9bb2c508b.bindPopup(popup_026598147d1cef86bab284c4afcdd417)
+        ;
+
+        
+    
+    
+            marker_41694915a9cd61b0bfa5cba9bb2c508b.bindTooltip(
+                `<div>
+                     Jinchuan Solar Park
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_41694915a9cd61b0bfa5cba9bb2c508b.setIcon(icon_2302f969a594fb64d76ee96e29dd64f8);
+            
+    
+            var marker_b1e8b0390e143da6717a8f1a8ed46311 = L.marker(
+                [15.7, 78.0],
+                {
+}
+            ).addTo(feature_group_05eca1c4fae631ace259ae05eeea7baf);
+        
+    
+            var icon_914bf29fb515e2927737e343a8313ca0 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "sun-o",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_ec80d268aca1a2a515e91a7a8274ed7e = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_2a91f3264398580d8791d955dc52f36a = $(`<div id="html_2a91f3264398580d8791d955dc52f36a" style="width: 100.0%; height: 100.0%;"><b>Kurnool Ultra Mega Solar Park</b><br>Country: India<br>Capacity: 1000 MW<br>Year: 2017-2022<br>Households Powered: 250,000</div>`)[0];
+                popup_ec80d268aca1a2a515e91a7a8274ed7e.setContent(html_2a91f3264398580d8791d955dc52f36a);
+            
+        
+
+        marker_b1e8b0390e143da6717a8f1a8ed46311.bindPopup(popup_ec80d268aca1a2a515e91a7a8274ed7e)
+        ;
+
+        
+    
+    
+            marker_b1e8b0390e143da6717a8f1a8ed46311.bindTooltip(
+                `<div>
+                     Kurnool Ultra Mega Solar Park
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_b1e8b0390e143da6717a8f1a8ed46311.setIcon(icon_914bf29fb515e2927737e343a8313ca0);
+            
+    
+            var marker_305258d95b0b58ce7248be0651a400a4 = L.marker(
+                [37.5, 107.3],
+                {
+}
+            ).addTo(feature_group_05eca1c4fae631ace259ae05eeea7baf);
+        
+    
+            var icon_224209b4d05270aecae73b290977dd68 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "sun-o",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_95a72240268293a5271357cd3b554af4 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_fb13252b3f4f161943f665b51bb2af3c = $(`<div id="html_fb13252b3f4f161943f665b51bb2af3c" style="width: 100.0%; height: 100.0%;"><b>Yanchi Ningxia Solar Park</b><br>Country: China<br>Capacity: 1000 MW<br>Year: N/A<br>Households Powered: 250,000</div>`)[0];
+                popup_95a72240268293a5271357cd3b554af4.setContent(html_fb13252b3f4f161943f665b51bb2af3c);
+            
+        
+
+        marker_305258d95b0b58ce7248be0651a400a4.bindPopup(popup_95a72240268293a5271357cd3b554af4)
+        ;
+
+        
+    
+    
+            marker_305258d95b0b58ce7248be0651a400a4.bindTooltip(
+                `<div>
+                     Yanchi Ningxia Solar Park
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_305258d95b0b58ce7248be0651a400a4.setIcon(icon_224209b4d05270aecae73b290977dd68);
+            
+    
+            var marker_ec61f7e5a970eb5a0df5a88b75efa696 = L.marker(
+                [24.4, 54.8],
+                {
+}
+            ).addTo(feature_group_05eca1c4fae631ace259ae05eeea7baf);
+        
+    
+            var icon_d8c8722201b9107fa776c077f845d1dc = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "sun-o",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_332e1f0393dea235bd3d860434670470 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_80f7f29c5520d706a36135433dcd8056 = $(`<div id="html_80f7f29c5520d706a36135433dcd8056" style="width: 100.0%; height: 100.0%;"><b>Noor Abu Dhabi</b><br>Country: UAE<br>Capacity: 1177 MW<br>Year: 2019<br>Households Powered: 294,250</div>`)[0];
+                popup_332e1f0393dea235bd3d860434670470.setContent(html_80f7f29c5520d706a36135433dcd8056);
+            
+        
+
+        marker_ec61f7e5a970eb5a0df5a88b75efa696.bindPopup(popup_332e1f0393dea235bd3d860434670470)
+        ;
+
+        
+    
+    
+            marker_ec61f7e5a970eb5a0df5a88b75efa696.bindTooltip(
+                `<div>
+                     Noor Abu Dhabi
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_ec61f7e5a970eb5a0df5a88b75efa696.setIcon(icon_d8c8722201b9107fa776c077f845d1dc);
+            
+    
+            var marker_2926266522b5d90347b1cb87d08a2e82 = L.marker(
+                [9.3, 78.4],
+                {
+}
+            ).addTo(feature_group_05eca1c4fae631ace259ae05eeea7baf);
+        
+    
+            var icon_bfd2cded7fd3f76c53a6159beee9b4e9 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "sun-o",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_e61d3daea4fa0ffa040830831b9794fe = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_250485dda69d2f3bbcfee58be9097ad7 = $(`<div id="html_250485dda69d2f3bbcfee58be9097ad7" style="width: 100.0%; height: 100.0%;"><b>Kamuthi Solar Power Station</b><br>Country: India<br>Capacity: 648 MW<br>Year: N/A<br>Households Powered: 162,000</div>`)[0];
+                popup_e61d3daea4fa0ffa040830831b9794fe.setContent(html_250485dda69d2f3bbcfee58be9097ad7);
+            
+        
+
+        marker_2926266522b5d90347b1cb87d08a2e82.bindPopup(popup_e61d3daea4fa0ffa040830831b9794fe)
+        ;
+
+        
+    
+    
+            marker_2926266522b5d90347b1cb87d08a2e82.bindTooltip(
+                `<div>
+                     Kamuthi Solar Power Station
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_2926266522b5d90347b1cb87d08a2e82.setIcon(icon_bfd2cded7fd3f76c53a6159beee9b4e9);
+            
+    
+            var marker_6eb91d823735cecf31d6d1dfcbe56380 = L.marker(
+                [36.1, 100.8],
+                {
+}
+            ).addTo(feature_group_05eca1c4fae631ace259ae05eeea7baf);
+        
+    
+            var icon_d08ad1c82cda78a31ef83a0f671e9854 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "sun-o",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_89c49902020539f835fb5a1e391b40d7 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_3b7270f76249302752c8cb1ebf257880 = $(`<div id="html_3b7270f76249302752c8cb1ebf257880" style="width: 100.0%; height: 100.0%;"><b>Longyangxia Dam Solar Park</b><br>Country: China<br>Capacity: 850 MW<br>Year: 2013-2015<br>Households Powered: 212,500</div>`)[0];
+                popup_89c49902020539f835fb5a1e391b40d7.setContent(html_3b7270f76249302752c8cb1ebf257880);
+            
+        
+
+        marker_6eb91d823735cecf31d6d1dfcbe56380.bindPopup(popup_89c49902020539f835fb5a1e391b40d7)
+        ;
+
+        
+    
+    
+            marker_6eb91d823735cecf31d6d1dfcbe56380.bindTooltip(
+                `<div>
+                     Longyangxia Dam Solar Park
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_6eb91d823735cecf31d6d1dfcbe56380.setIcon(icon_d08ad1c82cda78a31ef83a0f671e9854);
+            
+    
+            var marker_5a9cf4d1238a9a74168cb23a69a5adf0 = L.marker(
+                [11.3, 106.4],
+                {
+}
+            ).addTo(feature_group_05eca1c4fae631ace259ae05eeea7baf);
+        
+    
+            var icon_5fefafe8428bc2991e46e372ec60caff = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "sun-o",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_4c0958de3578da7d4006fb6f0c4d1a2f = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_cc5efaa9b7886534b450081e42ff4f2c = $(`<div id="html_cc5efaa9b7886534b450081e42ff4f2c" style="width: 100.0%; height: 100.0%;"><b>Dau Tieng Solar Power Complex</b><br>Country: Vietnam<br>Capacity: 420 MW<br>Year: 2019<br>Households Powered: 105,000</div>`)[0];
+                popup_4c0958de3578da7d4006fb6f0c4d1a2f.setContent(html_cc5efaa9b7886534b450081e42ff4f2c);
+            
+        
+
+        marker_5a9cf4d1238a9a74168cb23a69a5adf0.bindPopup(popup_4c0958de3578da7d4006fb6f0c4d1a2f)
+        ;
+
+        
+    
+    
+            marker_5a9cf4d1238a9a74168cb23a69a5adf0.bindTooltip(
+                `<div>
+                     Dau Tieng Solar Power Complex
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_5a9cf4d1238a9a74168cb23a69a5adf0.setIcon(icon_5fefafe8428bc2991e46e372ec60caff);
+            
+    
+            var marker_5001cf2096f9b70e8d1c26064c9c302a = L.marker(
+                [24.5, 81.3],
+                {
+}
+            ).addTo(feature_group_05eca1c4fae631ace259ae05eeea7baf);
+        
+    
+            var icon_4d70784864e36312851818894bc96133 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "sun-o",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_5f366932a6dfce2a9f70edf39f73e867 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_1dee9544a3524616447e565c2695ae44 = $(`<div id="html_1dee9544a3524616447e565c2695ae44" style="width: 100.0%; height: 100.0%;"><b>Rewa Ultra Mega Solar</b><br>Country: India<br>Capacity: 750 MW<br>Year: 2018<br>Households Powered: 187,500</div>`)[0];
+                popup_5f366932a6dfce2a9f70edf39f73e867.setContent(html_1dee9544a3524616447e565c2695ae44);
+            
+        
+
+        marker_5001cf2096f9b70e8d1c26064c9c302a.bindPopup(popup_5f366932a6dfce2a9f70edf39f73e867)
+        ;
+
+        
+    
+    
+            marker_5001cf2096f9b70e8d1c26064c9c302a.bindTooltip(
+                `<div>
+                     Rewa Ultra Mega Solar
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_5001cf2096f9b70e8d1c26064c9c302a.setIcon(icon_4d70784864e36312851818894bc96133);
+            
+    
+            feature_group_05eca1c4fae631ace259ae05eeea7baf.addTo(map_9154694d670ac68bba80901112108001);
+        
+    
+            var feature_group_59c4a3e1da9a8243c35ea1bcbf082c6c = L.featureGroup(
+                {
+}
+            );
+        
+    
+            var marker_19e83895b94c52bcd6dc5db36be6d159 = L.marker(
+                [24.6, 32.8],
+                {
+}
+            ).addTo(feature_group_59c4a3e1da9a8243c35ea1bcbf082c6c);
+        
+    
+            var icon_79bb67027c11faca7610a99d7d8eede6 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "sun-o",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_3f561d3425d351c9c657e4df1a05dd76 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_df0f0d2c13c513f4beec52d6575ebc95 = $(`<div id="html_df0f0d2c13c513f4beec52d6575ebc95" style="width: 100.0%; height: 100.0%;"><b>Benban Solar Park</b><br>Country: Egypt<br>Capacity: 1770 MW<br>Year: 2019<br>Households Powered: 442,500</div>`)[0];
+                popup_3f561d3425d351c9c657e4df1a05dd76.setContent(html_df0f0d2c13c513f4beec52d6575ebc95);
+            
+        
+
+        marker_19e83895b94c52bcd6dc5db36be6d159.bindPopup(popup_3f561d3425d351c9c657e4df1a05dd76)
+        ;
+
+        
+    
+    
+            marker_19e83895b94c52bcd6dc5db36be6d159.bindTooltip(
+                `<div>
+                     Benban Solar Park
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_19e83895b94c52bcd6dc5db36be6d159.setIcon(icon_79bb67027c11faca7610a99d7d8eede6);
+            
+    
+            feature_group_59c4a3e1da9a8243c35ea1bcbf082c6c.addTo(map_9154694d670ac68bba80901112108001);
+        
+    
+            var feature_group_279f83c2d3de87b128d84ec923590840 = L.featureGroup(
+                {
+}
+            );
+        
+    
+            var marker_ebcfe5ae69b2ba3241480460f45f0100 = L.marker(
+                [25.6, -103.0],
+                {
+}
+            ).addTo(feature_group_279f83c2d3de87b128d84ec923590840);
+        
+    
+            var icon_449882379712f02ba17310543e978894 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "sun-o",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_4bf2776d13519c9ad25f96918b9f9571 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_591a75b1a2bd32095035a2dcac89a280 = $(`<div id="html_591a75b1a2bd32095035a2dcac89a280" style="width: 100.0%; height: 100.0%;"><b>Villanueva Plant</b><br>Country: Mexico<br>Capacity: 754 MW<br>Year: N/A<br>Households Powered: 188,500</div>`)[0];
+                popup_4bf2776d13519c9ad25f96918b9f9571.setContent(html_591a75b1a2bd32095035a2dcac89a280);
+            
+        
+
+        marker_ebcfe5ae69b2ba3241480460f45f0100.bindPopup(popup_4bf2776d13519c9ad25f96918b9f9571)
+        ;
+
+        
+    
+    
+            marker_ebcfe5ae69b2ba3241480460f45f0100.bindTooltip(
+                `<div>
+                     Villanueva Plant
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_ebcfe5ae69b2ba3241480460f45f0100.setIcon(icon_449882379712f02ba17310543e978894);
+            
+    
+            var marker_7e90f35b07681626aa5bd74775b4f8d2 = L.marker(
+                [35.8, -115.0],
+                {
+}
+            ).addTo(feature_group_279f83c2d3de87b128d84ec923590840);
+        
+    
+            var icon_ffebd57cfbc5799b6c5eed24440da0a2 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "sun-o",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_31dacf9f110b92068cc0f3ec7f0a06bd = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_4690575dc3809252cb06b7423b2185a1 = $(`<div id="html_4690575dc3809252cb06b7423b2185a1" style="width: 100.0%; height: 100.0%;"><b>Copper Mountain Solar Facility</b><br>Country: USA<br>Capacity: 802 MW<br>Year: 2010-2016<br>Households Powered: 200,500</div>`)[0];
+                popup_31dacf9f110b92068cc0f3ec7f0a06bd.setContent(html_4690575dc3809252cb06b7423b2185a1);
+            
+        
+
+        marker_7e90f35b07681626aa5bd74775b4f8d2.bindPopup(popup_31dacf9f110b92068cc0f3ec7f0a06bd)
+        ;
+
+        
+    
+    
+            marker_7e90f35b07681626aa5bd74775b4f8d2.bindTooltip(
+                `<div>
+                     Copper Mountain Solar Facility
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_7e90f35b07681626aa5bd74775b4f8d2.setIcon(icon_ffebd57cfbc5799b6c5eed24440da0a2);
+            
+    
+            var marker_b27bee06b27584476bb8377e7a9c52c2 = L.marker(
+                [32.7, -115.7],
+                {
+}
+            ).addTo(feature_group_279f83c2d3de87b128d84ec923590840);
+        
+    
+            var icon_ecdf217d85c6d4d54191ba0d02c13343 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "sun-o",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_46bb1b02e49ddcba9f0c5e722756755a = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_466bc490189bbea7505dc71babb41669 = $(`<div id="html_466bc490189bbea7505dc71babb41669" style="width: 100.0%; height: 100.0%;"><b>Mount Signal Solar</b><br>Country: USA<br>Capacity: 794 MW<br>Year: 2014-2018<br>Households Powered: 198,500</div>`)[0];
+                popup_46bb1b02e49ddcba9f0c5e722756755a.setContent(html_466bc490189bbea7505dc71babb41669);
+            
+        
+
+        marker_b27bee06b27584476bb8377e7a9c52c2.bindPopup(popup_46bb1b02e49ddcba9f0c5e722756755a)
+        ;
+
+        
+    
+    
+            marker_b27bee06b27584476bb8377e7a9c52c2.bindTooltip(
+                `<div>
+                     Mount Signal Solar
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_b27bee06b27584476bb8377e7a9c52c2.setIcon(icon_ecdf217d85c6d4d54191ba0d02c13343);
+            
+    
+            var marker_62b3213299da9ad3718d9836285484cf = L.marker(
+                [34.9, -118.5],
+                {
+}
+            ).addTo(feature_group_279f83c2d3de87b128d84ec923590840);
+        
+    
+            var icon_817b7c98bbc7a0a8be163e3a14514283 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "sun-o",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_2fb347f864b51938e748209dc827c906 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_06984c66cb3b4158c2d3d4ae5109794e = $(`<div id="html_06984c66cb3b4158c2d3d4ae5109794e" style="width: 100.0%; height: 100.0%;"><b>Solar Star Projects</b><br>Country: USA<br>Capacity: 747 MW<br>Year: 2015<br>Households Powered: 186,750</div>`)[0];
+                popup_2fb347f864b51938e748209dc827c906.setContent(html_06984c66cb3b4158c2d3d4ae5109794e);
+            
+        
+
+        marker_62b3213299da9ad3718d9836285484cf.bindPopup(popup_2fb347f864b51938e748209dc827c906)
+        ;
+
+        
+    
+    
+            marker_62b3213299da9ad3718d9836285484cf.bindTooltip(
+                `<div>
+                     Solar Star Projects
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_62b3213299da9ad3718d9836285484cf.setIcon(icon_817b7c98bbc7a0a8be163e3a14514283);
+            
+    
+            var marker_f6a6dd45b7d260b3d422f01544d622ee = L.marker(
+                [42.9, -82.4],
+                {
+}
+            ).addTo(feature_group_279f83c2d3de87b128d84ec923590840);
+        
+    
+            var icon_5c3dd805e94b357ef62d3002c71deb7b = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "sun-o",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_dfab0fb38f4ac117b593c5f6448637c2 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_e5f0c018d80ae40a9aa83abb276c397b = $(`<div id="html_e5f0c018d80ae40a9aa83abb276c397b" style="width: 100.0%; height: 100.0%;"><b>Sarnia Photovoltaic Power Plant</b><br>Country: Canada<br>Capacity: 97 MW<br>Year: 2010<br>Households Powered: 24,250</div>`)[0];
+                popup_dfab0fb38f4ac117b593c5f6448637c2.setContent(html_e5f0c018d80ae40a9aa83abb276c397b);
+            
+        
+
+        marker_f6a6dd45b7d260b3d422f01544d622ee.bindPopup(popup_dfab0fb38f4ac117b593c5f6448637c2)
+        ;
+
+        
+    
+    
+            marker_f6a6dd45b7d260b3d422f01544d622ee.bindTooltip(
+                `<div>
+                     Sarnia Photovoltaic Power Plant
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_f6a6dd45b7d260b3d422f01544d622ee.setIcon(icon_5c3dd805e94b357ef62d3002c71deb7b);
+            
+    
+            feature_group_279f83c2d3de87b128d84ec923590840.addTo(map_9154694d670ac68bba80901112108001);
+        
+    
+            var feature_group_a7abe7746b780f8f9e1253dd7ad82f20 = L.featureGroup(
+                {
+}
+            );
+        
+    
+            var marker_c005ed06d58f45e530240216edeef8ac = L.marker(
+                [39.8, -6.4],
+                {
+}
+            ).addTo(feature_group_a7abe7746b780f8f9e1253dd7ad82f20);
+        
+    
+            var icon_427aa5ebf1d47cd1562ec7129a8eb99c = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "sun-o",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_b67e965c2f6063feeaa2735e07fd613f = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_b66ed3ee201d64e30caaf7f3f90d498a = $(`<div id="html_b66ed3ee201d64e30caaf7f3f90d498a" style="width: 100.0%; height: 100.0%;"><b>Francisco Pizarro</b><br>Country: Spain<br>Capacity: 590 MW<br>Year: N/A<br>Households Powered: 147,500</div>`)[0];
+                popup_b67e965c2f6063feeaa2735e07fd613f.setContent(html_b66ed3ee201d64e30caaf7f3f90d498a);
+            
+        
+
+        marker_c005ed06d58f45e530240216edeef8ac.bindPopup(popup_b67e965c2f6063feeaa2735e07fd613f)
+        ;
+
+        
+    
+    
+            marker_c005ed06d58f45e530240216edeef8ac.bindTooltip(
+                `<div>
+                     Francisco Pizarro
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_c005ed06d58f45e530240216edeef8ac.setIcon(icon_427aa5ebf1d47cd1562ec7129a8eb99c);
+            
+    
+            var marker_1c79adb3d09a075cb5f5dcd8b774af6f = L.marker(
+                [42.1, 25.8],
+                {
+}
+            ).addTo(feature_group_a7abe7746b780f8f9e1253dd7ad82f20);
+        
+    
+            var icon_d660a237581ccff06cbc752ae1a751af = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "sun-o",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_162899dbeeb0538ffbf8880242b53763 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_ed763f2c7ce6bb2cde691f340edd3b17 = $(`<div id="html_ed763f2c7ce6bb2cde691f340edd3b17" style="width: 100.0%; height: 100.0%;"><b>Maritsa Solar Park</b><br>Country: Bulgaria<br>Capacity: 250 MW<br>Year: N/A<br>Households Powered: 62,500</div>`)[0];
+                popup_162899dbeeb0538ffbf8880242b53763.setContent(html_ed763f2c7ce6bb2cde691f340edd3b17);
+            
+        
+
+        marker_1c79adb3d09a075cb5f5dcd8b774af6f.bindPopup(popup_162899dbeeb0538ffbf8880242b53763)
+        ;
+
+        
+    
+    
+            marker_1c79adb3d09a075cb5f5dcd8b774af6f.bindTooltip(
+                `<div>
+                     Maritsa Solar Park
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_1c79adb3d09a075cb5f5dcd8b774af6f.setIcon(icon_d660a237581ccff06cbc752ae1a751af);
+            
+    
+            feature_group_a7abe7746b780f8f9e1253dd7ad82f20.addTo(map_9154694d670ac68bba80901112108001);
+        
+    
+            var layer_control_01c1a36dca4e78c07f4ce9a5562fbb60_layers = {
+                base_layers : {
+                    "cartodbpositron" : tile_layer_947366a80a81e2ed67dc9c70e7a1b753,
+                },
+                overlays :  {
+                    "Asia" : feature_group_05eca1c4fae631ace259ae05eeea7baf,
+                    "Africa" : feature_group_59c4a3e1da9a8243c35ea1bcbf082c6c,
+                    "North America" : feature_group_279f83c2d3de87b128d84ec923590840,
+                    "Europe" : feature_group_a7abe7746b780f8f9e1253dd7ad82f20,
+                },
+            };
+            let layer_control_01c1a36dca4e78c07f4ce9a5562fbb60 = L.control.layers(
+                layer_control_01c1a36dca4e78c07f4ce9a5562fbb60_layers.base_layers,
+                layer_control_01c1a36dca4e78c07f4ce9a5562fbb60_layers.overlays,
+                {
+  "position": "topright",
+  "collapsed": true,
+  "autoZIndex": true,
+}
+            ).addTo(map_9154694d670ac68bba80901112108001);
+
+        
+    
+            L.control.fullscreen(
+                {
+  "position": "topleft",
+  "title": "Full Screen",
+  "titleCancel": "Exit Full Screen",
+  "forceSeparateButton": false,
+}
+            ).addTo(map_9154694d670ac68bba80901112108001);
+        
+    
+            var tile_layer_e2f85148bcc610171e7a9431066a3702 = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {"attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors", "detect_retina": false, "max_native_zoom": 19, "max_zoom": 19, "min_zoom": 0, "no_wrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            );
+            var mini_map_81087d2c74b77863cc2b458e8afd28cd = new L.Control.MiniMap(
+                tile_layer_e2f85148bcc610171e7a9431066a3702,
+                {
+  "position": "bottomright",
+  "width": 150,
+  "height": 150,
+  "collapsedWidth": 25,
+  "collapsedHeight": 25,
+  "zoomLevelOffset": -5,
+  "centerFixed": false,
+  "zoomAnimation": false,
+  "toggleDisplay": false,
+  "autoToggleDisplay": false,
+  "minimized": false,
+}
+            );
+            map_9154694d670ac68bba80901112108001.addControl(mini_map_81087d2c74b77863cc2b458e8afd28cd);
+        
+</script>
+</html>

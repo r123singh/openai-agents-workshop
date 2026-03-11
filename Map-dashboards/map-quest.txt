@@ -1,0 +1,23 @@
+1. List the top 30 cities with the highest number of UNESCO World Heritage Sites. Write a Python code to plot these cities on a map, using distinct markers for each. When hovering over a marker, display the city name, the number of heritage sites, and a brief description of the most famous site in that city.
+
+2. Create a list of the 30 most visited national parks worldwide. Write a Python script to plot these parks on an interactive map, using unique markers for each. When hovering over a marker, display the park name, its country, annual visitor count, and a fun fact about the park’s natural wonders.
+
+3. Identify the top 25 global tech startup hubs based on venture capital funding in the last 5 years. Write a Python script to plot these cities on an interactive world map, using bubble markers scaled by total funding amount. On hover, show the city name, total funding (USD), number of startups, and the name of the most valuable startup headquartered there.
+
+4. Compile a list of the 30 cities with the worst annual air quality (highest average PM2.5 levels). Plot them on a map using color-coded markers (red = worst, orange = moderate). On hover, display the city name, country, average PM2.5 value, and a health advisory message based on WHO guidelines.
+
+5. List the 25 busiest international airports by total passenger traffic. Plot them on a map using airplane-shaped markers sized by passenger volume. On hover, show airport name, IATA code, city, country, total passengers (millions), and the top 3 destination countries from that airport.
+
+6. Gather data on the 30 largest solar power plants in the world by capacity (MW). Plot their locations on a map using sun-shaped markers, colored by continent using Python. On hover, display plant name, country, installed capacity, year commissioned, and estimated households powered.
+
+7. Identify the 25 cities hosting the most Michelin-starred restaurants. Plot them on a map using star-shaped markers, where the number of stars per marker equals the count of 3-star restaurants in that city. On hover, show city name, total Michelin stars, number of 3-star restaurants, and the name of the top-rated restaurant.
+
+8. Map the 30 most active volcanoes in the last decade based on eruption frequency. Use fiery-colored markers scaled by eruption count. On hover, display volcano name, country, elevation, last eruption date, and a brief note on its eruption style or historical impact.
+
+9. List the 25 universities with the largest international student populations. Plot them on a map using graduation cap markers, sized by total international enrollment. On hover, show university name, city, country, total international students, top 3 source countries, and a notable alumni name.
+
+10. Identify the 30 cities with the highest density of electric vehicle (EV) charging stations per capita. Plot them on a map using plug-shaped markers, colored by charging speed tier (Level 1/2/DC Fast). On hover, show city name, country, stations per 1000 residents, total stations, and % of EVs in total vehicle fleet.
+
+11. Chart the 25 deepest subway/metro systems in the world by maximum depth below ground. Plot station or system locations using underground tunnel markers. On hover, display city, metro system name, deepest station, depth in meters, and a fun fact (e.g., “Also used as a Cold War bunker”).
+
+12. List the 30 countries with the highest number of endangered species (IUCN Red List). Plot them on a choropleth map, with intensity indicating species count. Overlay animal-shaped markers at capital cities. On hover over a country, show country name, total endangered species, top 3 threatened species, and major conservation efforts underway.
