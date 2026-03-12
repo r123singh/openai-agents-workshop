@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stocks-Agent - Multi-Agent Stock Market Expert</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #667eea;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: #667eea;
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 120px 0 80px;
+            text-align: center;
+            color: white;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            animation: fadeInUp 1s ease;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+            animation: fadeInUp 1s ease 0.2s both;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(45deg, #ff6b6b, #ee5a24);
+            color: white;
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            animation: fadeInUp 1s ease 0.4s both;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(255, 107, 107, 0.4);
+        }
+
+        /* Features Section */
+        .features {
+            padding: 80px 0;
+            background: white;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: #333;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .feature-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            border-left: 5px solid #667eea;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .feature-card h3 {
+            color: #667eea;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .feature-card p {
+            color: #666;
+            margin-bottom: 1rem;
+        }
+
+        .sub-features {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .sub-features li {
+            padding: 0.5rem 0;
+            color: #555;
+            position: relative;
+            padding-left: 1.5rem;
+        }
+
+        .sub-features li::before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            color: #667eea;
+            font-weight: bold;
+        }
+
+        /* Footer */
+        footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero p {
+                font-size: 1.1rem;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .feature-card {
+                margin: 0 1rem;
+            }
+        }
+
+        /* Smooth Scroll */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Accessibility */
+        .cta-button:focus,
+        .nav-links a:focus {
+            outline: 2px solid #667eea;
+            outline-offset: 2px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <a href="#" class="logo">Stocks-Agent</a>
+            <ul class="nav-links">
+                <li><a href="#features">Features</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h1>Multi-Agent Stock Market Expert</h1>
+            <p>Powered by OpenAI Agents SDK - Your intelligent companion for stock market analysis</p>
+            <a href="#features" class="cta-button">Explore Features</a>
+        </div>
+    </section>
+
+    <section id="features" class="features">
+        <div class="container">
+            <h2 class="section-title">Platform Features</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <h3>📊 Stock Data Analysis</h3>
+                    <p>Autonomous data fetching and analysis from multiple sources. Generates easy-to-understand analysis for any user background.</p>
+                    <ul class="sub-features">
+                        <li>Real-time market data</li>
+                        <li>Multi-source analysis</li>
+                        <li>Layman-friendly explanations</li>
+                    </ul>
+                </div>
+
+                <div class="feature-card">
+                    <h3>📰 Stock Market News</h3>
+                    <p>Context-driven news aggregation from multiple sources with actionable insights and real-time updates.</p>
+                    <ul class="sub-features">
+                        <li>Company-specific news</li>
+                        <li>Topic-based analysis</li>
+                        <li>Global market trends</li>
+                    </ul>
+                </div>
+
+                <div class="feature-card">
+                    <h3>📈 Fundamental Data</h3>
+                    <p>Comprehensive fundamental analysis including financial statements, earnings, and company overviews.</p>
+                    <ul class="sub-features">
+                        <li>Income statements</li>
+                        <li>Balance sheets</li>
+                        <li>Cash flow analysis</li>
+                        <li>ETF analysis</li>
+                    </ul>
+                </div>
+
+                <div class="feature-card">
+                    <h3>🎯 Intelligence Data</h3>
+                    <p>Market-wide intelligence with top gainers/losers, active tickers, and insider trading information.</p>
+                    <ul class="sub-features">
+                        <li>Top gainers & losers</li>
+                        <li>Most active tickers</li>
+                        <li>Insider trading data</li>
+                    </ul>
+                </div>
+
+                <div class="feature-card">
+                    <h3>🔬 Advanced Analytics</h3>
+                    <p>Professional-grade analytics for financial experts including statistical analysis and pattern recognition.</p>
+                    <ul class="sub-features">
+                        <li>Statistical analysis</li>
+                        <li>Correlation analysis</li>
+                        <li>Time series analysis</li>
+                        <li>Pattern recognition</li>
+<!-- 2. Stock Market News - Performed by News Agent, it autonomously crawls different news sources and fetches news. The news is base is conversation driven relevant to context only. Actionable news items with up to date information. There are mainly 2 types focused under this - 
+    1. Pure company stock news - This is the most common type of news where the news is related to the company stock(s) being queries or discussed as part of the conversation.
+    2. Topic based news - News related to a specific topic or industry which the user is interested in. Fetched from multiple online news sources, it connects relevant stocks in the market with topic news fetched automatically. Generating explanations in layman terms for the user so that he can understand the news and make informed decisions in the stock market.
+    3. Global market trends - Deep dives into global market trends and news.
+
+3. Stock Fundamental Data - Driven by a Fundamental Data Agents, it processes queries around Fundamental Data - company stock overviews, income statements, balance sheets, cash flow statements, etc. It is able to translate the user's query into a series of fundamental data points and directs the request to the relevant agents - 
+    1. Overview Agent 
+    2. Income Statement Agent
+    3. Cash Flow Statement Agent
+    4. Balance Sheet Agent
+    5. Earnings Analysis Agent
+    6. ETF Analysis Agent
+
+4. Intelligence Data Agent - Driven by a Supervisor Intelligence Agent, it processes high level queries requiring Market wide intelligence. Interpreting user's needs for market level data. Translates the users queries into a series of market level data points and directs the request to the appropriate agents.
+    1. Top Gainers & Losers Agent - Fetches the top gainers and losers in the stock market. Looking at multiple sources, markets and stocks, it provides a comprehensive view of the top gainers and losers in the stock market relevant to the user's location, context. 
+    2. Most Active Tickers Agent - Fetches the most active tickers in the stock market. Looking at multiple sources, markets and stocks, it provides a comprehensive view of the most active tickers in the stock market relevant to the user's location, context and time frame.
+    3. Insider Trades Agent - Fetches the insider transactions in the stock market. Looking at multiple sources, markets and stocks, it provides a comprehensive view of the insider transactions in the stock market relevant to the user's location, context and time frame.
+
+5. Advanced Analytics Agent - Driven by a Advanced Analytics Agent, it processes queries around Advanced Analytics. Suitable for Financial Experts, it enables them to perform complex analysis on stocks and markets. It is derive the relevant advanced metrics from the user's query and directs the request to the appropriate agents.
+    1. Data Retrieval & Processing Agent - Retrieves the relevant company's financial data from the web. Collection of metrics needed for calculations. Generating side by side easy explanations for a non-finance user. Passed the calculated, raw numbers to the appropriate agents for further analysis.
+    2. Statistical Analysis Agent - Performs statistical analysis on the data. These include mean, median, mode, standard deviation, variance, etc. Starting the advanced analysis with some statistical calculations
+    3. Correlation Analysis Agent - Analyzes the correlation between two or more stocks. Coming up with the correlation coefficient, correlation matrix, covariance, etc. metrics for a given time frame. Along with line by line financial explanations for any non-finance user. Additinal insights including the impact on the stock price, market trends, etc.
+    4. Time Series Analysis Agent - Analyzes the time series data of a stock. Coming up with the time series data for a given time frame. Along with line by line financial explanations for any non-finance user. Additinal insights including the impact on the stock price, market trends, etc.
+    5. Pattern Analysis Agent - Analyzes the pattern of a stock. Looking at multiple sources, markets and stocks, it provides a comprehensive view of the pattern of a stock relevant to the user's location, context and time frame.
+    6. Regression Analysis Agent - Analyzes the regression of a stock. Coming up with the regression equation, regression coefficient, regression intercept, etc. metrics for a given time frame. Along with line by line financial explanations for any non-finance user. Additinal insights including the impact on the stock price, market trends, etc.
+
+6. Stock Triage Agent - Driven by a Stock Triage Agent, it processes queries around Stock Triage. It is able to translate the user's query into a series of stock triage data points and directs the request to the appropriate agents.
+    1. Stock Data Analysis Agent - Analyzes the stock data for a given stock symbol.
+    2. Stock Market News Agent - Analyzes the stock market news for a given stock symbol.
+    3. Stock Fundamental Data Agent - Analyzes the stock fundamental data for a given stock symbol.
+    4. Intelligence Data Agent - Analyzes the intelligence data for a given stock symbol.
+    5. Advanced Analytics Agent - Analyzes the advanced analytics for a given stock symbol.
+
+This application gives a holistic view of the stock market. Considering the user profile and background. Emphasis on explanations, analogies, and easy to understand language. For any non-finance user, it is designed to be a friendly user just like a human stock agent.  -->

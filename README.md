@@ -38,6 +38,15 @@ A multi-agent contract assistant that handles everything from initial preference
 
 [View Contract Assistant Example](Contract-Assistant/README.md)
 
+### Stocks Agent
+A multi-agent stock analysis system that handles everything from initial preferences to final booking. Features include:
+- Specialized agents for different stock analysis domains (stock data analysis, stock market news, stock fundamental data, intelligence data, advanced analytics)
+- Handoffs between stock data, advanced analytics, income statement agents.
+- Yahoo Finance, Alpha Vantage, web search integration.
+- Built with OpenAI Agents SDK. Using Multi-Agent Pattern sub-agents - Stock Data Analysis Agent, Stock Market News Agent, Stock Fundamental Data Agent, Intelligence Data Agent, Advanced Analytics Agent.
+- Also applied **Streaming Outputs** to stream responses to the user queries for smooth conversation.
+[View Stocks Agent Example](Stocks-Agent/README.md)
+
 ### Robot Agents
 A comprehensive project to demonstrate how Gemini AI can be leveraged across the entire robotics lifecycle—including design, manufacturing, operation, and maintenance—using intuitive Gradio interfaces.Implemented to showcase the capabilities of Gemini AI and Gradio in building Robots. Features include:
 - Anomaly detection and diagnostics
