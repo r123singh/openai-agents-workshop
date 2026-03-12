@@ -38,6 +38,24 @@ A multi-agent contract assistant that handles everything from initial preference
 
 [View Contract Assistant Example](Contract-Assistant/README.md)
 
+### Map Dashboards
+
+A collection of map dashboards built using the OpenAI Agents SDK and Deepseek. Features include:
+- Heritage sites map
+- UNESCO cities map
+- Solar plants visualization
+- Data-driven HTML exports
+
+[View Map Dashboards Example]( https://github.com/r123singh/openai-agents-workshop/blob/main/Map-dashboards/heritage-map.md)
+
+### Radio AI
+A radio station search agent built using the OpenAI Agents SDK and Google Gemini. It uses the radio.io API to search for radio stations and the Gemini model to generate the search results. Features include:
+- Radio station search
+- Country and genre filters
+- Gemini fallback
+- Stream URLs
+- Open in browser
+
 ## Contributing
 
 We welcome contributions! Here's how you can help:
