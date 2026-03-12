@@ -3,4 +3,7 @@ gradio
 fastapi
 uvicorn
 python-docx
-
+yfinance
+matplotlib
+google-generativeai
+huggingface_hub 

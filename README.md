@@ -38,6 +38,16 @@ A multi-agent contract assistant that handles everything from initial preference
 
 [View Contract Assistant Example](Contract-Assistant/README.md)
 
+### Robot Agents
+A comprehensive project to demonstrate how Gemini AI can be leveraged across the entire robotics lifecycle—including design, manufacturing, operation, and maintenance—using intuitive Gradio interfaces.Implemented to showcase the capabilities of Gemini AI and Gradio in building Robots. Features include:
+- Anomaly detection and diagnostics
+- New Robot Design Generation using natural language
+- Natural language robot design specs generation
+- Control plan generation from natural language
+- Parts list from design specs by querying the supplier database
+- Interactive robot controller
+[View Robot Agents Example](Robot-Agents/README.md)
+
 ### Map Dashboards
 
 A collection of map dashboards built using the OpenAI Agents SDK and Deepseek. Features include:
