@@ -75,6 +75,22 @@ A radio station search agent built using the OpenAI Agents SDK and Google Gemini
 - Stream URLs
 - Open in browser
 
+### Weather Agent
+A weather agent built using the OpenAI Agents SDK and LangGraph.js. It uses the OpenWeatherMap API to get the weather data and the LangGraph.js to build the agent. Includes a nodejs based interactive interface for the user to query the weather data. Features include:
+- Multi-agent weather analysis
+    - Main Response Agent: Coordinates all specialized agents
+    - Current Weather Agent: Real-time weather data processing
+    - Forecast Agent: Weather predictions and trend analysis
+    - Historical Weather Agent: Past weather data analysis
+    - Recommendation Agent: AI-powered personalized insights
+    - Alert Agent: Weather alerts and notification management
+- Current, forecast, historical agents
+- AI recommendations and alerts
+- JWT auth and subscription tiers
+- Rate limiting by plan
+- NodeJS, Express, LangGraph.js, OpenAI, OpenWeatherMap, SQLite
+[View Weather Agent Details](Weather-Agent/README.md)   
+
 ## Contributing
 
 We welcome contributions! Here's how you can help:
