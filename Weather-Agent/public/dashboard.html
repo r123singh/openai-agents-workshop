@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Dashboard - Multi-Agent System</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
+    <link href="dashboard.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="header-content">
+                <h1><i class="fas fa-tachometer-alt"></i> Weather Dashboard</h1>
+                <p>Real-time weather monitoring with multi-agent intelligence</p>
+                <div class="dashboard-controls">
+                    <button id="addCityBtn" class="btn btn-primary">
+                        <i class="fas fa-plus"></i> Add City
+                    </button>
+                    <button id="refreshAllBtn" class="btn btn-secondary">
+                        <i class="fas fa-sync-alt"></i> Refresh All
+                    </button>
+                    <button id="settingsBtn" class="btn btn-secondary">
+                        <i class="fas fa-cog"></i> Settings
+                    </button>
+                    <button id="accountBtn" class="btn btn-secondary">
+                        <i class="fas fa-user"></i> Account
+                    </button>
+                    <a href="index.html" class="btn btn-outline">
+                        <i class="fas fa-arrow-left"></i> Back to Query
+                    </a>
+                </div>
+            </div>
+        </header>
+        <main class="dashboard-content">
+            <!-- Alerts Section -->
+            <div class="alerts-section" id="alertsSection" style="display: none;"></div>
+            <!-- Dashboard Grid -->
+            <div class="dashboard-grid" id="dashboardGrid"></div>
+            <!-- Modals for Add City, Settings, and Account -->
+            <div class="modal" id="addCityModal"></div>
+            <div class="modal" id="settingsModal"></div>
+            <div class="modal" id="accountModal"></div>
+            <!-- Loading Overlay -->
+            <div class="loading-overlay" id="loadingOverlay" style="display: none;"></div>
+        </main>
+        <footer class="footer"></footer>
+    </div>
+    <script src="dashboard.js"></script>
+</body>
+</html>

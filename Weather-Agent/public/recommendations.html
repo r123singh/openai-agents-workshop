@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Recommendations - Multi-Agent System</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
+    <link href="recommendations.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="header-content">
+                <h1><i class="fas fa-lightbulb"></i> Weather Recommendations</h1>
+                <p>AI-powered personalized weather insights and suggestions</p>
+                <div class="header-actions">
+                    <a href="index.html" class="btn btn-outline">
+                        <i class="fas fa-arrow-left"></i> Back to Query
+                    </a>
+                    <a href="dashboard.html" class="btn btn-outline">
+                        <i class="fas fa-tachometer-alt"></i> Dashboard
+                    </a>
+                </div>
+            </div>
+        </header>
+
+        <main class="recommendations-content">
+            <!-- User Preferences Section -->
+            <div class="preferences-section">
+                <h2><i class="fas fa-user-cog"></i> Your Preferences</h2>
+                <div class="preferences-grid">
+                    <div class="preference-group">
+                        <label>Favorite Activities:</label>
+                        <div class="activity-checkboxes">
+                            <label><input type="checkbox" value="hiking" checked> Hiking</label>
+                            <label><input type="checkbox" value="beach"> Beach</label>
+                            <label><input type="checkbox" value="cycling"> Cycling</label>
+                            <label><input type="checkbox" value="dining"> Outdoor Dining</label>
+                            <label><input type="checkbox" value="shopping"> Shopping</label>
+                            <label><input type="checkbox" value="sports"> Sports</label>
+                            <label><input type="checkbox" value="photography"> Photography</label>
+                            <label><input type="checkbox" value="gardening"> Gardening</label>
+                        </div>
+                    </div>
+                    
+                    <div class="preference-group">
+                        <label>Clothing Style:</label>
+                        <select id="clothingStyle">
+                            <option value="casual">Casual</option>
+                            <option value="formal">Formal</option>
+                            <option value="sporty">Sporty</option>
+                            <option value="outdoor">Outdoor</option>
+                        </select>
+                    </div>
+                    
+                    <div class="preference-group">
+                        <label>Travel Frequency:</label>
+                        <select id="travelFrequency">
+                            <option value="daily">Daily Commute</option>
+                            <option value="weekly">Weekly Trips</option>
+                            <option value="monthly">Monthly Travel</option>
+                            <option value="rarely">Rarely</option>
+                        </select>
+                    </div>
+                    
+                    <div class="preference-group">
+                        <label>Health Considerations:</label>
+                        <div class="health-checkboxes">
+                            <label><input type="checkbox" value="allergies"> Allergies</label>
+                            <label><input type="checkbox" value="sensitive_skin"> Sensitive Skin</label>
+                            <label><input type="checkbox" value="respiratory"> Respiratory Issues</label>
+                            <label><input type="checkbox" value="none"> None</label>
+                        </div>
+                    </div>
+                </div>
+                
+                <button id="savePreferences" class="btn btn-primary">
+                    <i class="fas fa-save"></i> Save Preferences
+                </button>
+            </div>
+
+            <!-- Query Section -->
+            <div class="query-section">
+                <h2><i class="fas fa-search"></i> Get Recommendations</h2>
+                <div class="query-inputs">
+                    <div class="input-group">
+                        <label for="recommendationCity">City:</label>
+                        <input type="text" id="recommendationCity" placeholder="Enter city name" value="London">
+                    </div>
+                    
+                    <div class="input-group">
+                        <label for="recommendationQuery">What would you like recommendations for?</label>
+                        <textarea id="recommendationQuery" placeholder="e.g., What should I wear today? What activities are good for this weather? Travel advice for the weekend?" rows="3">What activities are good for today's weather and what should I wear?</textarea>
+                    </div>
+                    
+                    <button id="getRecommendations" class="btn btn-primary">
+                        <i class="fas fa-magic"></i> Get AI Recommendations
+                    </button>
+                </div>
+            </div>
+
+            <!-- Quick Recommendation Cards -->
+            <div class="quick-recommendations">
+                <h2><i class="fas fa-bolt"></i> Quick Recommendations</h2>
+                <div class="quick-cards">
+                    <button class="quick-card" data-query="What should I wear today?">
+                        <i class="fas fa-tshirt"></i>
+                        <span>What to Wear</span>
+                    </button>
+                    <button class="quick-card" data-query="What activities are good for today's weather?">
+                        <i class="fas fa-hiking"></i>
+                        <span>Activities</span>
+                    </button>
+                    <button class="quick-card" data-query="Travel advice for today">
+                        <i class="fas fa-car"></i>
+                        <span>Travel Tips</span>
+                    </button>
+                    <button class="quick-card" data-query="Health and safety advice for today's weather">
+                        <i class="fas fa-heartbeat"></i>
+                        <span>Health Tips</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Loading Section -->
+            <div class="loading-section" id="loadingSection" style="display: none;">
+                <div class="loading-spinner">
+                    <i class="fas fa-spinner fa-spin"></i>
+                </div>
+                <p>Analyzing weather and generating personalized recommendations...</p>
+                <div class="ai-status">
+                    <div class="status-item">
+                        <i class="fas fa-cloud"></i>
+                        <span>Analyzing weather patterns</span>
+                    </div>
+                    <div class="status-item">
+                        <i class="fas fa-brain"></i>
+                        <span>Processing your preferences</span>
+                    </div>
+                    <div class="status-item">
+                        <i class="fas fa-lightbulb"></i>
+                        <span>Generating insights</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Results Section -->
+            <div class="results-section" id="resultsSection" style="display: none;">
+                <div class="recommendations-header">
+                    <h2><i class="fas fa-star"></i> Your Personalized Recommendations</h2>
+                    <div class="weather-summary" id="weatherSummary"></div>
+                </div>
+
+                <div class="recommendations-grid" id="recommendationsGrid">
+                    <!-- Recommendations will be dynamically added here -->
+                </div>
+
+                <div class="detailed-response">
+                    <h3><i class="fas fa-comment"></i> Detailed AI Analysis</h3>
+                    <div class="response-content" id="detailedResponse"></div>
+                </div>
+            </div>
+
+            <!-- Error Section -->
+            <div class="error-section" id="errorSection" style="display: none;">
+                <div class="error-card">
+                    <h3><i class="fas fa-exclamation-triangle"></i> Error</h3>
+                    <div id="errorContent"></div>
+                </div>
+            </div>
+        </main>
+
+        <footer class="footer">
+            <p>AI-powered weather insights powered by LangGraph.js and OpenAI | Personalized for you</p>
+        </footer>
+    </div>
+
+    <script src="recommendations.js"></script>
+</body>
+</html>

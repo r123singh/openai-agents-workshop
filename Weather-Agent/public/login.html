@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Weather Multi-Agent System</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
+    <link href="auth.css" rel="stylesheet">
+</head>
+<body>
+    <div class="auth-container">
+        <div class="auth-card">
+            <div class="auth-header">
+                <h1><i class="fas fa-cloud-sun"></i> Weather Multi-Agent</h1>
+                <p>Sign in to your account</p>
+            </div>
+
+            <!-- Login Form -->
+            <form id="loginForm" class="auth-form">
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+                <button type="submit" class="btn btn-primary btn-full">
+                    <i class="fas fa-sign-in-alt"></i> Sign In
+                </button>
+            </form>
+
+            <!-- Register Form -->
+            <form id="registerForm" class="auth-form" style="display: none;">
+                <div class="form-group">
+                    <label for="regFirstName">First Name</label>
+                    <input type="text" id="regFirstName" name="firstName" required>
+                </div>
+                <div class="form-group">
+                    <label for="regLastName">Last Name</label>
+                    <input type="text" id="regLastName" name="lastName" required>
+                </div>
+                <div class="form-group">
+                    <label for="regEmail">Email</label>
+                    <input type="email" id="regEmail" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="regPassword">Password</label>
+                    <input type="password" id="regPassword" name="password" required minlength="8">
+                </div>
+                <button type="submit" class="btn btn-primary btn-full">
+                    <i class="fas fa-user-plus"></i> Create Account
+                </button>
+            </form>
+
+            <!-- Forgot Password Form -->
+            <form id="forgotForm" class="auth-form" style="display: none;">
+                <div class="form-group">
+                    <label for="forgotEmail">Email</label>
+                    <input type="email" id="forgotEmail" name="email" required>
+                </div>
+                <button type="submit" class="btn btn-primary btn-full">
+                    <i class="fas fa-envelope"></i> Send Reset Link
+                </button>
+            </form>
+
+            <div class="auth-links">
+                <a href="#" id="showRegister">Don't have an account? Sign up</a>
+                <a href="#" id="showLogin" style="display: none;">Already have an account? Sign in</a>
+                <a href="#" id="showForgot">Forgot your password?</a>
+                <a href="#" id="backToLogin" style="display: none;">Back to login</a>
+            </div>
+
+            <div class="auth-divider">
+                <span>or</span>
+            </div>
+
+            <div class="auth-actions">
+                <a href="index.html" class="btn btn-outline btn-full">
+                    <i class="fas fa-home"></i> Continue as Guest
+                </a>
+            </div>
+        </div>
+
+        <!-- Loading Overlay -->
+        <div class="loading-overlay" id="loadingOverlay" style="display: none;">
+            <div class="loading-spinner"></div>
+            <p>Processing...</p>
+        </div>
+    </div>
+
+    <script src="auth.js"></script>
+</body>
+</html>

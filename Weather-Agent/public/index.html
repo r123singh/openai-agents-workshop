@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Multi-Agent System</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="header-content">
+                <h1><i class="fas fa-cloud-sun"></i> Weather Multi-Agent System</h1>
+                <p>A LangGraph-powered multi-agent weather application</p>
+                                        <div class="header-actions">
+                            <a href="dashboard.html" class="btn btn-outline">
+                                <i class="fas fa-tachometer-alt"></i> Live Dashboard
+                            </a>
+                            <a href="recommendations.html" class="btn btn-outline">
+                                <i class="fas fa-lightbulb"></i> AI Recommendations
+                            </a>
+                            <a href="alerts.html" class="btn btn-outline">
+                                <i class="fas fa-exclamation-triangle"></i> Weather Alerts
+                            </a>
+                        </div>
+            </div>
+        </header>
+
+        <main class="main-content">
+            <div class="input-section">
+                <div class="input-group">
+                    <label for="cityInput">City:</label>
+                    <input type="text" id="cityInput" placeholder="Enter city name (e.g., London, New York, Tokyo)" value="London">
+                </div>
+                
+                <div class="input-group">
+                    <label for="queryInput">Weather Query:</label>
+                    <textarea id="queryInput" placeholder="Ask about weather conditions, forecasts, historical data, etc. (e.g., 'What's the current weather and 3-day forecast?')" rows="3">What's the current weather and 3-day forecast?</textarea>
+                </div>
+
+                <div class="button-group">
+                    <button id="submitBtn" class="btn btn-primary">
+                        <i class="fas fa-search"></i> Get Weather Info
+                    </button>
+                    <button id="clearBtn" class="btn btn-secondary">
+                        <i class="fas fa-eraser"></i> Clear
+                    </button>
+                </div>
+            </div>
+
+            <div class="loading-section" id="loadingSection" style="display: none;">
+                <div class="loading-spinner">
+                    <i class="fas fa-spinner fa-spin"></i>
+                </div>
+                <p>Processing your request with multiple agents...</p>
+                <div class="agent-status" id="agentStatus"></div>
+            </div>
+
+            <div class="results-section" id="resultsSection" style="display: none;">
+                <div class="response-card">
+                    <h3><i class="fas fa-comment"></i> Response</h3>
+                    <div class="response-content" id="responseContent"></div>
+                </div>
+
+                <div class="details-section">
+                    <div class="details-tabs">
+                        <button class="tab-btn active" data-tab="analysis">Query Analysis</button>
+                        <button class="tab-btn" data-tab="agents">Agent Responses</button>
+                        <button class="tab-btn" data-tab="metadata">Metadata</button>
+                    </div>
+
+                    <div class="tab-content">
+                        <div class="tab-pane active" id="analysis">
+                            <h4>Query Analysis</h4>
+                            <div id="analysisContent"></div>
+                        </div>
+
+                        <div class="tab-pane" id="agents">
+                            <h4>Agent Responses</h4>
+                            <div id="agentsContent"></div>
+                        </div>
+
+                        <div class="tab-pane" id="metadata">
+                            <h4>Workflow Metadata</h4>
+                            <div id="metadataContent"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="error-section" id="errorSection" style="display: none;">
+                <div class="error-card">
+                    <h3><i class="fas fa-exclamation-triangle"></i> Error</h3>
+                    <div id="errorContent"></div>
+                </div>
+            </div>
+        </main>
+
+        <footer class="footer">
+            <p>Powered by LangGraph.js and OpenAI | Weather data from OpenWeatherMap</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

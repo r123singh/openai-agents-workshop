@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Alerts - Multi-Agent System</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
+    <link href="alerts.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="header-content">
+                <h1><i class="fas fa-exclamation-triangle"></i> Weather Alerts</h1>
+                <p>Real-time weather alerts and notification management</p>
+                <div class="header-actions">
+                    <a href="index.html" class="btn btn-outline">
+                        <i class="fas fa-arrow-left"></i> Back to Query
+                    </a>
+                    <a href="dashboard.html" class="btn btn-outline">
+                        <i class="fas fa-tachometer-alt"></i> Dashboard
+                    </a>
+                    <a href="recommendations.html" class="btn btn-outline">
+                        <i class="fas fa-lightbulb"></i> Recommendations
+                    </a>
+                </div>
+            </div>
+        </header>
+        
+        <main class="alerts-content">
+            <!-- Alert Preferences Section -->
+            <div class="preferences-section">
+                <div class="section-header">
+                    <h2><i class="fas fa-cog"></i> Alert Preferences</h2>
+                    <button id="savePreferencesBtn" class="btn btn-primary">
+                        <i class="fas fa-save"></i> Save Preferences
+                    </button>
+                </div>
+                <div class="preferences-grid">
+                    <!-- Temperature Alerts -->
+                    <div class="preference-group">
+                        <h3><i class="fas fa-thermometer-half"></i> Temperature Alerts</h3>
+                        <div class="threshold-inputs">
+                            <div class="input-group">
+                                <label for="maxTemp">Maximum Temperature (°C):</label>
+                                <input type="number" id="maxTemp" placeholder="35">
+                            </div>
+                            <div class="input-group">
+                                <label for="minTemp">Minimum Temperature (°C):</label>
+                                <input type="number" id="minTemp" placeholder="-10">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Precipitation Alerts -->
+                    <div class="preference-group">
+                        <h3><i class="fas fa-cloud-rain"></i> Precipitation Alerts</h3>
+                        <div class="threshold-inputs">
+                            <div class="input-group">
+                                <label for="maxRain">Maximum Rain (mm/hour):</label>
+                                <input type="number" id="maxRain" placeholder="20">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Wind Alerts -->
+                    <div class="preference-group">
+                        <h3><i class="fas fa-wind"></i> Wind Alerts</h3>
+                        <div class="threshold-inputs">
+                            <div class="input-group">
+                                <label for="maxWind">Maximum Wind Speed (m/s):</label>
+                                <input type="number" id="maxWind" placeholder="15">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Alert Types -->
+                    <div class="preference-group">
+                        <h3><i class="fas fa-bell"></i> Alert Types</h3>
+                        <div class="alert-checkboxes">
+                            <label class="checkbox-item">
+                                <input type="checkbox" id="alertStorm" checked>
+                                <span class="checkmark"></span>
+                                Storms & Thunderstorms
+                            </label>
+                            <label class="checkbox-item">
+                                <input type="checkbox" id="alertFlood" checked>
+                                <span class="checkmark"></span>
+                                Floods & Flooding
+                            </label>
+                            <label class="checkbox-item">
+                                <input type="checkbox" id="alertTornado" checked>
+                                <span class="checkmark"></span>
+                                Tornadoes
+                            </label>
+                            <label class="checkbox-item">
+                                <input type="checkbox" id="alertHurricane" checked>
+                                <span class="checkmark"></span>
+                                Hurricanes & Typhoons
+                            </label>
+                            <label class="checkbox-item">
+                                <input type="checkbox" id="alertHeat" checked>
+                                <span class="checkmark"></span>
+                                Heat Waves
+                            </label>
+                            <label class="checkbox-item">
+                                <input type="checkbox" id="alertCold" checked>
+                                <span class="checkmark"></span>
+                                Cold Snaps & Freezes
+                            </label>
+                            <label class="checkbox-item">
+                                <input type="checkbox" id="alertSnow" checked>
+                                <span class="checkmark"></span>
+                                Snow & Blizzards
+                            </label>
+                            <label class="checkbox-item">
+                                <input type="checkbox" id="alertIce" checked>
+                                <span class="checkmark"></span>
+                                Ice & Freezing Conditions
+                            </label>
+                            <label class="checkbox-item">
+                                <input type="checkbox" id="alertWind" checked>
+                                <span class="checkmark"></span>
+                                High Winds
+                            </label>
+                            <label class="checkbox-item">
+                                <input type="checkbox" id="alertFog" checked>
+                                <span class="checkmark"></span>
+                                Fog & Visibility Issues
+                            </label>
+                            <label class="checkbox-item">
+                                <input type="checkbox" id="alertAirQuality" checked>
+                                <span class="checkmark"></span>
+                                Air Quality Issues
+                            </label>
+                            <label class="checkbox-item">
+                                <input type="checkbox" id="alertFire" checked>
+                                <span class="checkmark"></span>
+                                Fires & Wildfires
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- City Selection Section -->
+            <div class="city-section">
+                <div class="section-header">
+                    <h2><i class="fas fa-map-marker-alt"></i> Monitor City</h2>
+                    <button id="checkAlertsBtn" class="btn btn-primary">
+                        <i class="fas fa-search"></i> Check Alerts
+                    </button>
+                </div>
+                <div class="city-input">
+                    <input type="text" id="cityInput" placeholder="Enter city name (e.g., London, New York)" value="London">
+                </div>
+            </div>
+
+            <!-- Quick Alert Checks -->
+            <div class="quick-checks">
+                <h2><i class="fas fa-bolt"></i> Quick Alert Checks</h2>
+                <div class="quick-buttons">
+                    <button class="quick-btn" data-query="Are there any weather alerts or warnings?">
+                        <i class="fas fa-exclamation-triangle"></i>
+                        Current Alerts
+                    </button>
+                    <button class="quick-btn" data-query="Are there any severe weather conditions?">
+                        <i class="fas fa-shield-alt"></i>
+                        Severe Weather
+                    </button>
+                    <button class="quick-btn" data-query="Are there any storm warnings?">
+                        <i class="fas fa-bolt"></i>
+                        Storm Warnings
+                    </button>
+                    <button class="quick-btn" data-query="Are there any temperature extremes?">
+                        <i class="fas fa-thermometer-half"></i>
+                        Temperature Alerts
+                    </button>
+                </div>
+            </div>
+
+            <!-- Loading Section -->
+            <div class="loading-section" id="loadingSection" style="display: none;">
+                <div class="loading-spinner"></div>
+                <div class="loading-text">
+                    <h3>Analyzing Weather Conditions</h3>
+                    <p>Checking for alerts and analyzing weather patterns...</p>
+                </div>
+            </div>
+
+            <!-- Results Section -->
+            <div class="results-section" id="resultsSection" style="display: none;">
+                <!-- Current Alerts -->
+                <div class="alerts-display">
+                    <h2><i class="fas fa-exclamation-circle"></i> Current Alerts</h2>
+                    <div class="alerts-grid" id="alertsGrid"></div>
+                </div>
+
+                <!-- Alert Analysis -->
+                <div class="analysis-display">
+                    <h2><i class="fas fa-chart-line"></i> Alert Analysis</h2>
+                    <div class="analysis-grid" id="analysisGrid"></div>
+                </div>
+
+                <!-- Recommendations -->
+                <div class="recommendations-display">
+                    <h2><i class="fas fa-lightbulb"></i> Safety Recommendations</h2>
+                    <div class="recommendations-content" id="recommendationsContent"></div>
+                </div>
+            </div>
+
+            <!-- Error Section -->
+            <div class="error-section" id="errorSection" style="display: none;">
+                <div class="error-content">
+                    <i class="fas fa-exclamation-circle"></i>
+                    <h3>Error</h3>
+                    <p id="errorMessage"></p>
+                </div>
+            </div>
+        </main>
+
+        <footer class="footer">
+            <p>&copy; 2024 Weather Multi-Agent System. Powered by LangGraph.js</p>
+        </footer>
+    </div>
+
+    <script src="alerts.js"></script>
+</body>
+</html>
