@@ -89,7 +89,18 @@ A weather agent built using the OpenAI Agents SDK and LangGraph.js. It uses the 
 - JWT auth and subscription tiers
 - Rate limiting by plan
 - NodeJS, Express, LangGraph.js, OpenAI, OpenWeatherMap, SQLite
-[View Weather Agent Details](Weather-Agent/README.md)   
+[View Weather Agent Details](Weather-Agent/README.md)  
+
+### Agentic Quiz
+A dynamic quiz agent built using the OpenAI Agents SDK and Pydantic. It uses the OpenAI Agents SDK to build the agent and Pydantic to build the quiz context. Features include:
+- Dynamic quiz generation
+- Quiz context management
+- Quiz evaluation
+- Quiz results
+- Quiz history
+- OpenAI Agents SDK, Pydantic, Python
+
+Building a dynamic quiz agent that will generate questions based on the user's input on the previous question. Will start with a single question, then wait for the user's response, once user responds, agent checks the response,evaluates the response and then generates another question to further probe the user. It should be fair if user is easily answerin the questions, then it should give next question bit more challenging. But if user is struggling with 1-2 questions, then it should give next question bit easier or be neutral if just 1 question is struggling for example. 
 
 ## Contributing
 
