@@ -121,6 +121,22 @@ A weather agent built using the OpenAI Agents SDK and OpenAI Agents SDK. It uses
 - OpenAI Agents SDK, Pydantic, Python
 [View Weather Terminal Example](Weather-Terminal/blog.md)
 
+### Contract Validation - Deterministic Contract Drafting using OpenAI Agents SDK
+A contract assistant built using the OpenAI Agents SDK and Pydantic. The OpenAI Agents SDK is used to build the agents and Pydantic defines the contract context. 
+
+This example demonstrates a deterministic workflow for contract drafting, in which each step is handled by a different agent:
+1. The first agent determines the contract type based on user requirements.
+2. The contract type is passed to the second agent.
+3. The second agent checks if the contract type is appropriate and verifies that all required fields are present.
+4. If the contract type is not suitable or required fields are missing, the process stops here.
+5. If the contract type is suitable and all required fields are included, the details are passed to the third agent.
+6. The third agent generates the final contract.
+
+Key features:
+- Contract type determination
+- Contract validation
+- Contract generation
+
 ## Contributing
 
 We welcome contributions! Here's how you can help:
