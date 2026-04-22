@@ -100,7 +100,17 @@ A dynamic quiz agent built using the OpenAI Agents SDK and Pydantic. It uses the
 - Quiz history
 - OpenAI Agents SDK, Pydantic, Python
 
-Building a dynamic quiz agent that will generate questions based on the user's input on the previous question. Will start with a single question, then wait for the user's response, once user responds, agent checks the response,evaluates the response and then generates another question to further probe the user. It should be fair if user is easily answerin the questions, then it should give next question bit more challenging. But if user is struggling with 1-2 questions, then it should give next question bit easier or be neutral if just 1 question is struggling for example. 
+Building a dynamic quiz agent that will generate questions based on the user's input on the previous question. Will start with a single question, then wait for the user's response, once user responds, agent checks the response,evaluates the response and then generates another question to further probe the user. It should be fair if user is easily answerin the questions, then it should give next question bit more challenging. But if user is struggling with 1-2 questions, then it should give next question bit easier or be neutral if just 1 question is struggling for example.
+
+### Agent Chess Game    - 2 LLMs playing chess with each other
+A chess game built using the OpenAI Agents SDK and Pydantic. It uses the OpenAI Agents SDK to build the agent and Pydantic to build the chess game. Features include:
+- 2 LLMs playing chess with each other
+- Chess game
+- Chess board
+- Chess pieces
+- Chess moves
+- Chess game
+- Chess board
 
 ## Contributing
 
