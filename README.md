@@ -112,6 +112,15 @@ A chess game built using the OpenAI Agents SDK and Pydantic. It uses the OpenAI 
 - Chess game
 - Chess board
 
+### Weather Terminal - Weather Agent using OpenAI Agents SDK
+A weather agent built using the OpenAI Agents SDK and OpenAI Agents SDK. It uses the OpenWeatherMap API to get the weather data and the OpenAI Agents SDK to build the agent. Features include:
+- Multi-agent weather analysis
+- Current, forecast, historical agents
+- AI recommendations and alerts
+- Handoffs between current, forecast, historical agents
+- OpenAI Agents SDK, Pydantic, Python
+[View Weather Terminal Example](Weather-Terminal/blog.md)
+
 ## Contributing
 
 We welcome contributions! Here's how you can help:
